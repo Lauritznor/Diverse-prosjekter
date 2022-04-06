@@ -21,5 +21,6 @@ export default {
 <style>
 main{
   min-height: 800px;
+  background-color: #f1f1f1;
 }
 </style>

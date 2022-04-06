@@ -5,4 +5,26 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis facilis nam voluptatibus quod ut ducimus similique et sunt distinctio in, nisi quas reiciendis, esse deleniti minus labore temporibus a error saepe, neque earum asperiores. Blanditiis quis placeat laborum! Autem dolorem earum excepturi ducimus veritatis? Nemo praesentium hic distinctio accusantium nobis quasi quae itaque veniam ab vel non id repellendus quam, voluptatibus in est laborum ullam esse pariatur cum minus. Nam, quis a dolor sed corporis velit repellat qui veritatis quam alias excepturi rem beatae obcaecati eos cumque hic ipsam vel, saepe eaque numquam nostrum? Quo dolor error labore reprehenderit, id similique deleniti earum rerum quae unde vero qui iure, adipisci tempora mollitia porro, nobis odio numquam quia eaque. Commodi laudantium sunt cum similique numquam facilis! Nulla, quibusdam quod repudiandae dolore deleniti id omnis voluptatum consectetur pariatur maxime numquam dolorem nostrum, voluptatem voluptas commodi nemo aperiam reiciendis enim, sint cum voluptates inventore nihil? Quam voluptas corporis illo eaque totam dicta expedita molestias eveniet? Placeat odio, laborum quas odit atque cupiditate cum laboriosam, quidem dolore voluptatibus, soluta consequatur delectus qui! Dicta rem nam ipsum alias eius! Iste natus, explicabo corporis unde ullam recusandae impedit exercitationem! Harum suscipit vero ipsa ullam voluptas ex!</p>
 
     <h5>Push pull legs yessir</h5>
+    <div class="flextest">
+    <card-component> </card-component>
+    <card-component> </card-component>
+    <card-component> </card-component>
+    <card-component> </card-component>
+    </div>
 </template>
+
+
+<script>
+import CardComponent from '../component-items/CardComponent.vue'
+export default {
+   components: {CardComponent}
+}
+
+</script>
+<style scoped>
+.flextest{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+</style>
