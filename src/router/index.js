@@ -1,6 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import TestComponent from '../components/pages/TestComponent.vue'
 
 const routes = [
+    {
+        name: "test",
+        path: "/",
+        component: TestComponent
+    }
 
 ];
 
