@@ -30,4 +30,3 @@ export default {
     justify-content: center;
 }
 </style>
->>>>>>> 380d28065b5d4f80df32f8c4afa1eb70b5eb25eb
