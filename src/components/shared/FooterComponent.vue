@@ -1,19 +1,12 @@
 <template>
 
-<footer class="bg-dark text-center text-white">
-  <div class="container p-4 pb-0">
-    <section class="mb-4 icons">
-      <i class="bi bi-twitter"></i>
-      <i class="bi bi-linkedin"></i>
-      <i class="bi bi-facebook"></i>
-      <i class="bi bi-github"></i>
-      <i class="bi bi-instagram"></i>
-    </section>
+<footer class="footer-color text-center text-white">
+  <div class="container p-4 pb-0 ">
   </div>
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">HARandomWebsite.com</a>
+      For mer informasjon om Forsvaret 
+    <a class="text-white" href="https://forsvaret.no">Trykk her.</a>
   </div>
   <!-- Copyright -->
 </footer>
@@ -28,5 +21,8 @@
 .icons i {
     margin: 5px;
     font-size: 36px;
+}
+.footer-color{
+    background-color: #3c421a;
 }
 </style>
