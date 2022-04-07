@@ -1,8 +1,16 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-        <div class="brand">
-            <router-link class="navbar-brand" to="/">Header</router-link>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark p-3"> 
+
+        <!-- LOGO -->
+        <div class="brand forsvaret-brand">
+            <router-link class="navbar-brand" to="/">
+                    <img :src="require(`@/assets/images/logos/forsvaret-logo.png`)" style="height: 50px;">
+            </router-link>
+            <router-link class="navbar-brand forsvaret-text" to="/">Forsvaret</router-link>
         </div>
+
 
         <div class="links">
             <ul class="navbar-nav">
@@ -22,12 +30,14 @@
                 
             </ul>
         </div>
+
     </nav>
 </template>
 <script>
 import 'bootstrap/dist/css/bootstrap.min.css'
-export default {
-    
+
+export default{
+
 }
 </script>
 <style>
@@ -39,6 +49,17 @@ export default {
 }
 nav{
     display: flex;
-    justify-content: space-between !important;
+    justify-content: space-between !important; /* Using !important to overwrite bootstrap */
+    background-color: #3c421a !important;
+}
+.forsvaret-brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.forsvaret-text{
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-family: 'Lato', sans-serif;
 }
 </style>
