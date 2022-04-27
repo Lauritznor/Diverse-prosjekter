@@ -15,7 +15,10 @@
         <div class="links">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <router-link to="/" class="nav-link">Om siden</router-link>
+                    <router-link to="/" class="nav-link">Oversikt</router-link>
+                </li>
+                 <li class="nav-item">
+                    <router-link to="/parts" class="nav-link">Legg til data</router-link>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Oversikt</a>
@@ -24,10 +27,6 @@
                         <li class="dropdown-item" href="#">Another action</li>
                         <li class="dropdown-item" href="#">Something else here</li>
                     </ul>
-                </li>
-
-                <li class="nav-item">
-                    <router-link to="/parts" class="nav-link">Oversikt</router-link>
                 </li>
                 <li class="nav-item">
                     <router-link to="/wheels" class="nav-link">Link3</router-link>
