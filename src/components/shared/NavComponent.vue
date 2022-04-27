@@ -18,24 +18,8 @@
                     <router-link to="/" class="nav-link">Oversikt</router-link>
                 </li>
                  <li class="nav-item">
-                    <router-link to="/parts" class="nav-link">Legg til data</router-link>
+                    <router-link to="/add" class="nav-link">Legg til data</router-link>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Oversikt</a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-item" href="#">Action</li>
-                        <li class="dropdown-item" href="#">Another action</li>
-                        <li class="dropdown-item" href="#">Something else here</li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/wheels" class="nav-link">Link3</router-link>
-                </li>
-                <form class="form-inline my-2 my-lg-0 m-1 search-form">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                </form>
-                
             </ul>
         </div>
 

@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import TestComponent from '../components/pages/TestComponent.vue'
+import OverviewComponent from '../components/pages/OverviewComponent.vue'
+import  AddData from '../components/pages/AddData.vue'
 
 const routes = [
     {
-        name: "test",
+        name: "Oversikt",
         path: "/",
-        component: TestComponent
+        component: OverviewComponent
+    },
+    {
+        name: "Legg til data",
+        path: "/add",
+        component: AddData
     }
 
 ];
