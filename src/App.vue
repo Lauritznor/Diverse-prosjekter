@@ -19,8 +19,12 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+  font-family: 'Lato', sans-serif;
+}
 main{
-  min-height: 800px;
+  min-height: 90vh;
   background-color: #f1f1f1;
 }
 </style>

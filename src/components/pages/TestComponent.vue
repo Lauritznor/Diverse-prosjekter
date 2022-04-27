@@ -1,29 +1,111 @@
 <template>
-    <h1>ITS WORKING!</h1>
+    <div class="main-parent">
+        <aside class="aside">
+            <h1 id="overview-h1">OVERSIKT</h1>
+            <div id="overview">   
+                <h4>Søk:</h4>
+                <p>Spesifiser hva brukeren søker etter når vi har laget søke funksjonen</p>
+                <div class="flex">
+                    <input type="text">
+                    <input type="submit">
+                </div>
 
-    <h2>TEST 2</h2>
+        
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis facilis nam voluptatibus quod ut ducimus similique et sunt distinctio in, nisi quas reiciendis, esse deleniti minus labore temporibus a error saepe, neque earum asperiores. Blanditiis quis placeat laborum! Autem dolorem earum excepturi ducimus veritatis? Nemo praesentium hic distinctio accusantium nobis quasi quae itaque veniam ab vel non id repellendus quam, voluptatibus in est laborum ullam esse pariatur cum minus. Nam, quis a dolor sed corporis velit repellat qui veritatis quam alias excepturi rem beatae obcaecati eos cumque hic ipsam vel, saepe eaque numquam nostrum? Quo dolor error labore reprehenderit, id similique deleniti earum rerum quae unde vero qui iure, adipisci tempora mollitia porro, nobis odio numquam quia eaque. Commodi laudantium sunt cum similique numquam facilis! Nulla, quibusdam quod repudiandae dolore deleniti id omnis voluptatum consectetur pariatur maxime numquam dolorem nostrum, voluptatem voluptas commodi nemo aperiam reiciendis enim, sint cum voluptates inventore nihil? Quam voluptas corporis illo eaque totam dicta expedita molestias eveniet? Placeat odio, laborum quas odit atque cupiditate cum laboriosam, quidem dolore voluptatibus, soluta consequatur delectus qui! Dicta rem nam ipsum alias eius! Iste natus, explicabo corporis unde ullam recusandae impedit exercitationem! Harum suscipit vero ipsa ullam voluptas ex!</p>
+                <h4>Velg forsvarsgren:</h4>
+                <div class="form">
+                    <label></label>
+                    <select id="branch_of_defence">
+                        <option>Hæren</option>
+                        <option>Sjøforsvaret</option>
+                        <option>Luftforsvaret</option>
+                        <option>Alle forsvarsgrenene</option>
+                    </select>
+                </div>
+            </div>
 
-    <h5>Push pull legs yessir</h5>
+            <div id="spesific">
+                <h4>Spesifike valg</h4>
+            </div>
 
-    <div class="flextest">
-    <card-component> </card-component>
-    <card-component> </card-component>
-    <card-component> </card-component>
-    <card-component> </card-component>
-    </div>
+
+
+        </aside>
+
+
+        <div class="content">
+
+        </div>
+   </div>
 </template>
 
 
 <script>
-import CardComponent from '../component-items/CardComponent.vue'
+//import CardComponent from '../component-items/CardComponent.vue'
 export default {
-   components: {CardComponent}
+   //components: {CardComponent}
 }
 
 </script>
 <style scoped>
+.flex{
+    display: flex;
+}
+.aside{
+    width: 20%;
+    min-height: 90vh; /* CHANGE IN PHONE VIEW */
+    display: flex;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#branch_of_defence{
+    padding: 7px;
+}
+#branch_of_defence option:nth-child(odd){
+    background-color: #f1f1f1;
+}
+#overview-h1{
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    background: #dedede;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#overview{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 30%;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #dedede;
+}
+#spesific{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    padding: 20px;
+}
+
+.content{
+    width: 80%;
+    min-height: 90vh;
+    
+}
+.main-parent{
+    display: flex;
+}
+
 .flextest{
     display: flex;
     flex-wrap: wrap;
