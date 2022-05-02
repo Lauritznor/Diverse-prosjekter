@@ -8,6 +8,7 @@
       For mer informasjon om Forsvaret 
     <a class="text-white" href="https://forsvaret.no">Trykk her.</a>
   </div>
+
   <!-- Copyright -->
 </footer>
 </template>

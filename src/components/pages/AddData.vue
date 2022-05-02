@@ -1,26 +1,14 @@
 <template>
     <div class="center">
         <section class="add-data-section">
-            <!-- 
-
-            Input felt for å legge til:
-            - Personer og alle attributtene (fornavn etternavn osv)
-            - Kjøreøy
-            - Våpen
-            - Missions
-            - opplasting av bilder
-            -->
-
-            <!-- SKRIV INN UNDER HER -->
-            <h1>Add content:</h1>
+            <div>
 
                 
         </section>
     </div>
 </template>
 <script>
-export default {
-}
+
 </script>
 <style scoped>
 .center{
