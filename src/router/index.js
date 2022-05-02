@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import OverviewComponent from '../components/pages/OverviewComponent.vue'
-import  AddData from '../components/pages/AddData.vue'
+import AddData from '../components/pages/AddData.vue'
+import SoldierComponent from '../components/pages/DataInserts/SoldierComponent.vue'
 
 const routes = [
     {
@@ -12,6 +13,11 @@ const routes = [
         name: "Legg til data",
         path: "/add",
         component: AddData
+    },
+    {
+        name: "soldiers",
+        path:"/add/soldier",
+        component: SoldierComponent
     }
 
 ];

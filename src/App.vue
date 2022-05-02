@@ -4,21 +4,30 @@
     <router-view></router-view>
   </main>
   <footer-component></footer-component>
+
 </template>
 
 <script>
 import NavComponent from './components/shared/NavComponent.vue'
 import FooterComponent from './components/shared/FooterComponent.vue'
+
 export default {
   name: 'App',
   components: {
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    
   }
 }
 </script>
 
 <style>
+
+
+
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *{
   font-family: 'Lato', sans-serif;
@@ -26,5 +35,6 @@ export default {
 main{
   min-height: 90vh;
   background-color: #f1f1f1;
+  display: flex;
 }
 </style>
