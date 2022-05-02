@@ -100,12 +100,6 @@ export default {
 .main-parent{
     display: flex;
     width: 100%;
-    border: 2px solid orange;
 }
 
-.flextest{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 </style>

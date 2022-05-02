@@ -16,7 +16,6 @@ export default {
   components: {
     NavComponent,
     FooterComponent,
-    
   }
 }
 </script>
@@ -26,6 +25,8 @@ export default {
 /* ROBOTO - HOVED FONT FOR HELE NETTSIDEN */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap');
+
 *{
  font-family: 'Roboto', sans-serif;
 }

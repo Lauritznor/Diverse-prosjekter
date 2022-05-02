@@ -14,10 +14,13 @@
         <div class="links">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <router-link to="/" class="nav-link">Oversikt</router-link>
+                    <router-link to="/overview" class="nav-link">Oversikt</router-link>
                 </li>
                  <li class="nav-item">
                     <router-link to="/add" class="nav-link">Legg til data</router-link>
+                </li>
+                 <li class="nav-item">
+                    <router-link to="/" class="nav-link home">Hjem</router-link>
                 </li>
             </ul>
         </div>
@@ -49,8 +52,14 @@ nav{
     align-items: center;
 }
 .forsvaret-text{
-    font-size: 1.5rem;
+    margin-top: 5px;
+}
+.home{
+    font-weight: 700;
     letter-spacing: 1px;
-    font-family: 'Lato', sans-serif;
+    text-decoration: underline !important; /*OVERSKRIVE BOOTSTRAP*/
+}
+.nav-link{
+    font-size: 1.4rem;
 }
 </style>

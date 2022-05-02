@@ -36,29 +36,5 @@ export default {
 }
 </script>
 <style scoped>
-.data-section{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-.data-content{
-    background-color: white;
-    min-height: 90vh;
-    margin: 20px;
-    padding: 20px 10%;
-}
-.header-parent{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.header h1{
-    font-family: 'Black Ops One', cursive;
-    font-size: 4rem;
-}
-.center-div{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+/* STYLE IS IN AddData COMPONENT*/
 </style>

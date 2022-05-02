@@ -2,32 +2,29 @@
     <div class="column">
 
         <div class="tab-menu">
+
                 <div class="tab-item">
                     <router-link class="tab-link" to="/add/veichles">
                         <h1>VEICHLES</h1>
                     </router-link>
                 </div>
+
                 <div class="tab-item">
                     <router-link class="tab-link" to="/add/soldiers">
                         <h1>SOLDIERS</h1>
                     </router-link>
                 </div>
+
                 <div class="tab-item">
                     <router-link class="tab-link" to="/add/missions">
                         <h1>MISSIONS</h1>
                     </router-link>
                 </div>
+
         </div>
 
     </div>
 </template>
-<script>
-import 'bootstrap/dist/css/bootstrap.css'
-
-export default{
-}
-
-</script>
 <style>
 .tab-parent{
     display: flex;
@@ -43,7 +40,12 @@ export default{
     padding: 20px;
     width: 33.33%;
     text-align: center;
-    
+}
+.tab-item:nth-child(odd){
+    background-color: #6b7245;
+}
+.tab-item:hover{
+    background-color: #a3aa83;
 }
 .tab-link{
     color: black;
@@ -79,5 +81,32 @@ export default{
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+/* FOR DATA INSERTS */
+.data-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.data-content{
+    background-color: white;
+    min-height: 90vh;
+    margin: 20px;
+    padding: 20px 10%;
+}
+.header-parent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 0px;
+}
+.header h1{
+    font-family: 'Black Ops One', cursive;
+    font-size: 4rem;
+}
+.center-div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 </style>

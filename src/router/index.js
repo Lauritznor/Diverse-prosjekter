@@ -1,14 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import OverviewComponent from '../components/pages/OverviewComponent.vue'
 import AddData from '../components/pages/AddData.vue'
-import MissionComponent from '../components/pages/DataInserts/MissionComponent.vue'
-import SoldierComponent from '../components/pages/DataInserts/SoldierComponent.vue'
-import VehicleComponent from '../components/pages/DataInserts/VehicleComponent.vue'
+import HomePage from '../components/pages/HomePage.vue'
+import MissionComponent from '../components/pages/DataOptions/MissionComponent.vue'
+import SoldierComponent from '../components/pages/DataOptions/SoldierComponent.vue'
+import VehicleComponent from '../components/pages/DataOptions/VehicleComponent.vue'
 
 const routes = [
     {
-        name: "Oversikt",
+        name: "Hjemmeside",
         path: "/",
+        component: HomePage
+    },
+    {
+        name: "Oversikt",
+        path: "/overview",
         component: OverviewComponent
     },
     {
