@@ -23,15 +23,13 @@ export default {
 
 <style>
 
-
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+/* ROBOTO - HOVED FONT FOR HELE NETTSIDEN */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 *{
-  font-family: 'Lato', sans-serif;
+ font-family: 'Roboto', sans-serif;
 }
+/* MIN HEIGHT FOR AT DEN SKAL DEKKE HELE SIDEN */
 main{
   min-height: 90vh;
   background-color: #f1f1f1;

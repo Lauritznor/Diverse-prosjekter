@@ -1,5 +1,4 @@
 <template>
-
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark p-3"> 
 

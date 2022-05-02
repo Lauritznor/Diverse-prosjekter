@@ -28,8 +28,6 @@
                 <h4>Spesifike valg</h4>
             </div>
 
-
-
         </aside>
 
 
@@ -41,9 +39,7 @@
 
 
 <script>
-//import CardComponent from '../component-items/CardComponent.vue'
 export default {
-   //components: {CardComponent}
 }
 
 </script>
@@ -100,10 +96,11 @@ export default {
 .content{
     width: 80%;
     min-height: 90vh;
-    
 }
 .main-parent{
     display: flex;
+    width: 100%;
+    border: 2px solid orange;
 }
 
 .flextest{
