@@ -3,8 +3,8 @@
         <vehicle-item v-for="(vehicle, i) in vehicles"
         :key="i"
             :id="vehicle.id"
-            :vehicleName="vehicle.vehicleName"
-            :vehicleType="vehicle.vehicleType"
+            :veichleName="vehicle.veichleName"
+            :veichleType="vehicle.veichleType"
             :weight="vehicle.weight"
             :isArmored="vehicle.isArmored"
             
