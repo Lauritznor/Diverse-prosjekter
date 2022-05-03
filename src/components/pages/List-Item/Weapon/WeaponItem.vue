@@ -1,15 +1,23 @@
 <template>
     <article class="card">
-        <h5>Mission Id</h5>
+        <h5>Våpen Id</h5>
         <h4>{{id}}</h4>
-        <h5>Is the mission secret?</h5>
-        <h4>{{secret}}</h4>
         <hr>
-        <h5>Oppdragsbeskrivelse</h5>
-        <h4>{{missionDescription}}</h4>
+        <h5>Våpen Navn</h5>
+        <h4>{{weaponName}}</h4>
         <hr>
-        <h5>Oppdragets lokalisjon</h5>
-        <h4>{{missionLocation}}</h4>
+        <h5>Våpen Kategori</h5>
+        <h4>{{weaponCategory}}</h4>
+        <hr>
+        <h5>Kuler i Magasinet</h5>
+        <h4>{{magazineSize}}</h4>
+        <hr>
+        <h5>Kaliber</h5>
+        <h4>{{caliber}}</h4>
+        <hr>
+        <h5>Produsent</h5>
+        <h4>{{manufacturer}}</h4>
+        <hr>
     </article>
 </template>
 
@@ -17,9 +25,12 @@
 export default {
     props: {
         id: Number,
-        secret: Boolean,
-        missionDescription: String,
-        missionLocation: String
+        weaponName: String,
+        weaponCategory: String,
+        magazineSize: Number,
+        caliber: Number,
+        manufacturer: String
+
     }
 }
 </script>
