@@ -1,8 +1,13 @@
 <template>
     <section>
-        <weapon-item v-for="(mission, i) in missions"
+        <weapon-item v-for="(weapon, i) in missions"
         :key="i"
-
+        :id="weapon.id"
+        :weaponName="weapon.weaponName"
+        :weaponCategory="weapon.weaponCategory"
+        :magazineSize="weapon.magazineSize"
+        :caliber="weapon.caliber"
+        :manufacturer="weapon.manufacturer"
         ></weapon-item>
     </section>
 </template>
@@ -13,10 +18,10 @@ import weaponService from '../../../../services/weaponService.js'
 
 export default {
     setup(){
-        const missions = missionService.getAllMissions();
+        const weapons = weaponService.getAllWeapons();
 
         return { 
-            missions 
+            weapons 
         }
     },
     components: {
