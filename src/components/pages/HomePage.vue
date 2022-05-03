@@ -15,6 +15,7 @@
             <p>
                 På "Legg til data" siden vil du kunne redigere og aksessere data fra databasen vår.
             </p>
+            <img class="forsvaretImage" v-bind:src="require('../../assets/images/forsvaret.jpg')" />
         </article>
     </section>
 </template>
@@ -30,4 +31,8 @@
     padding: 20px; 
     background-color: white;
 }
+.forsvaretImage{
+    width: 100%;
+}
+
 </style>
