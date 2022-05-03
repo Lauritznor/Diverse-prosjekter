@@ -1,10 +1,14 @@
 <template>
     <aside class="aside"> 
         <h1 id="overview-h1">OVERSIKT</h1>
-        <input @onclick="displaySoldiers" type="button" value="Soldater" class="aside-btn" >
+        <input type="button" value="Vis alle" class="aside-btn">
+        <hr>
+        <h3>VALG</h3>
+        <input type="button" value="Soldater" class="aside-btn" >
         <input type="button" value="Oppdrag" class="aside-btn">
         <input type="button" value="Kjøretøy" class="aside-btn">
         <input type="button" value="Våpen" class="aside-btn">
+        <hr>
         <h3>SØK ETTER ID</h3>
         <input type="text" class="aside-btn">
 
