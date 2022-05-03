@@ -23,3 +23,10 @@ export default {
     }
 }
 </script>
+<style scoped>
+.card {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+</style>

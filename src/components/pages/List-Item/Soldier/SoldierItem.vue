@@ -1,5 +1,5 @@
 <template>
-    <article class="soldier-card">
+    <article class="card">
         <h5>Soldatnummer</h5>
         <h4>{{id}}</h4>
         <h5>Navn</h5>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-.soldier-card {
+.card {
     background-color: white;
     padding: 10px;
     margin: 10px;

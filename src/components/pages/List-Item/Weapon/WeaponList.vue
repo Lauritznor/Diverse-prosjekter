@@ -28,5 +28,11 @@ export default {
         WeaponItem
     }
 }
-
 </script>
+<style scoped>
+.card {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+</style>
