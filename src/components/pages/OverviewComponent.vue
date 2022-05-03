@@ -1,7 +1,7 @@
 <template>
     <div class="main-parent">
         <aside class="aside">
-            <h1 id="overview-h1">OVERSIKT</h1>
+            <!-- <h1 id="overview-h1">OVERSIKT</h1>
             <div id="overview">   
                 <h4>Søk:</h4>
                 <p>Spesifiser hva brukeren søker etter når vi har laget søke funksjonen</p>
@@ -26,23 +26,29 @@
 
             <div id="spesific">
                 <h4>Spesifike valg</h4>
-            </div>
+            </div> -->
 
         </aside>
-
-
         <div class="content">
-
+            <h1>Resultat:</h1>
+            <overview-list></overview-list>
         </div>
+        
    </div>
 </template>
 
-
 <script>
-export default {
-}
+import OverviewList from './OverviewList.vue'
 
+export default {
+   components: {
+       OverviewList
+   }
+}
 </script>
+
+
+
 <style scoped>
 .flex{
     display: flex;
@@ -96,6 +102,7 @@ export default {
 .content{
     width: 80%;
     min-height: 90vh;
+    padding: 30px;
 }
 .main-parent{
     display: flex;

@@ -14,14 +14,15 @@
         <div class="links">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <router-link to="/" class="nav-link home">Hjem</router-link>
+                </li>
+                <li class="nav-item">
                     <router-link to="/overview" class="nav-link">Oversikt</router-link>
                 </li>
                  <li class="nav-item">
-                    <router-link to="/add" class="nav-link">Legg til data</router-link>
+                    <router-link to="/add" class="nav-link">Konfigurer data (admin)</router-link>
                 </li>
-                 <li class="nav-item">
-                    <router-link to="/" class="nav-link home">Hjem</router-link>
-                </li>
+
             </ul>
         </div>
 

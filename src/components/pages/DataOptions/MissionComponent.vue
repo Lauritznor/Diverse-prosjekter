@@ -6,7 +6,7 @@
 
                  <div class="header-parent">
                     <div class="header">
-                        <h5> legg til et... </h5>
+                        <h5> konfigurer et... </h5>
                         <h1> OPPDRAG </h1>
                     </div> 
                 </div> 
