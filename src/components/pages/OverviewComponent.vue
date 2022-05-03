@@ -1,17 +1,18 @@
 <template>
     <aside-component></aside-component>
     <div class="main-parent">
-        <overview-list></overview-list>  
+        <soldier-list></soldier-list>  
+        <mission-list></mission-list>
    </div>
 </template>
 
 <script>
-import OverviewList from './OverviewList.vue'
+import SoldierList from './List-Item/Soldier/SoldierList.vue'
 import AsideComponent from '../shared/AsideComponent.vue'
 
 export default {
    components: {
-       OverviewList,
+       SoldierList,
        AsideComponent
    },
 }
@@ -26,6 +27,9 @@ export default {
     display: flex;
     flex-direction: column;
 }
-
-
+.card {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
 </style>

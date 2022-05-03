@@ -1,6 +1,6 @@
 <template>
     <section>
-        <overview-item v-for="(soldier, i) in soldiers"
+        <soldier-item v-for="(soldier, i) in soldiers"
         :key="i"
             :id="soldier.id"
             :firstName="soldier.firstName"
@@ -8,13 +8,13 @@
             :age="soldier.age"
             :rank="soldier.rank"
             :soldierType="soldier.soldierType"
-        ></overview-item>
+        ></soldier-item>
     </section>
 </template>
 
 <script>
-import OverviewItem from './OverviewItem.vue'
-import soldierService from '../../services/soldierService.js'
+import MissionItem from './MissionItem.vue'
+import soldierService from '../../../../services/soldierService.js'
 
 export default {
     setup(){
@@ -25,7 +25,7 @@ export default {
         }
     },
     components: {
-        OverviewItem
+        MissionItem
     }
 }
 
