@@ -1,27 +1,25 @@
 <template>
     <section>
-        <soldier-item v-for="(soldier, i) in soldiers"
+        <mission-item v-for="(mission, i) in missions"
         :key="i"
-            :id="soldier.id"
-            :firstName="soldier.firstName"
-            :lastName="soldier.lastName"
-            :age="soldier.age"
-            :rank="soldier.rank"
-            :soldierType="soldier.soldierType"
-        ></soldier-item>
+            :id="mission.id"
+            :secret="mission.secret"
+            :missionDescription="mission.missionDescription"
+            :missionLocation="mission.missionLocation"
+        ></mission-item>
     </section>
 </template>
 
 <script>
 import MissionItem from './MissionItem.vue'
-import soldierService from '../../../../services/soldierService.js'
+import missionService from '../../../../services/missionService.js'
 
 export default {
     setup(){
-        const soldiers = soldierService.getAll();
+        const missions = missionService.getAllMissions();
 
         return { 
-            soldiers 
+            missions 
         }
     },
     components: {

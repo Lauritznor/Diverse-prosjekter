@@ -2,7 +2,6 @@
     <aside-component></aside-component>
     <div class="main-parent">
         <soldier-list></soldier-list>  
-        <mission-list></mission-list>
    </div>
 </template>
 

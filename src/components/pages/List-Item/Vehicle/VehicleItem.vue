@@ -1,5 +1,5 @@
 <template>
-    <article class="vehicle-card">
+    <article class="card">
         <h5>Id</h5>
         <h4>{{id}}</h4>
         <h5>Navn</h5>
@@ -28,11 +28,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.vehicle-card {
-    background-color: white;
-    padding: 10px;
-    margin: 10px;
-}
-</style>
