@@ -1,7 +1,7 @@
 <template>
-    <article>
+    <article class="soldier-card">
         <h5>Navn</h5>
-        <h3>{{firstName}} {{lastName}}</h3>
+        <h4>{{firstName}} {{lastName}}</h4>
         <hr>
         <h5>Soldatnummer</h5>
         <h4>{{serviceNumber}}</h4>
@@ -34,3 +34,12 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.soldier-card {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid green;
+}
+</style>

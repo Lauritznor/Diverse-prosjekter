@@ -1,7 +1,5 @@
 <template>
-    <section class="content">
-        <h3>PERSONER</h3>
-
+    <section>
         <overview-item v-for="(soldier, i) in soldiers"
         :key="i"
             :firstName="soldier.firstName"
