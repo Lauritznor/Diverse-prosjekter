@@ -4,7 +4,7 @@ import { ref } from "vue";
 const vehicleService = (function(){
 
     const vehicles = ref( [ 
-        {id: 1, vehicleName:"Feltvogn", weight: 3000, isArmored: false },
+        {id: 1, vehicleName:"Feltvogn", veichleType: "Tanks", weight: 3000, isArmored: false },
     ] );
 
     ( async () => {  
