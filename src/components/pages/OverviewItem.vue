@@ -19,7 +19,7 @@
 <script>
 export default {
     props: {
-        id: String,
+        id: Number,
         firstName: String,
         lastName: String,
         age: Number,
@@ -34,6 +34,5 @@ export default {
     background-color: white;
     padding: 10px;
     margin: 10px;
-    border: 2px solid green;
 }
 </style>

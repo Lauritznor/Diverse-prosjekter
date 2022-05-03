@@ -2,9 +2,9 @@
     <section>
         <overview-item v-for="(soldier, i) in soldiers"
         :key="i"
-            :id="soldier.Id"
+            :id="soldier.id"
             :firstName="soldier.firstName"
-            :lastName="soldier.fastName"
+            :lastName="soldier.lastName"
             :age="soldier.age"
             :rank="soldier.rank"
             :soldierType="soldier.soldierType"

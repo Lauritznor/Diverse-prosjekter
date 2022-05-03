@@ -13,8 +13,9 @@ export default {
    components: {
        OverviewList,
        AsideComponent
-   }
+   },
 }
+
 </script>
 
 <style scoped>
@@ -22,8 +23,9 @@ export default {
     width: 80%; /*MAIN SECTION SHOULD TAKE 80% OF PAGE WIDTH*/
     height: 90vh;
     overflow-y: scroll;
-    border: 2px solid red;
     display: flex;
     flex-direction: column;
 }
+
+
 </style>

@@ -5,6 +5,7 @@ import HomePage from '../components/pages/HomePage.vue'
 import MissionComponent from '../components/pages/DataOptions/MissionComponent.vue'
 import SoldierComponent from '../components/pages/DataOptions/SoldierComponent.vue'
 import VehicleComponent from '../components/pages/DataOptions/VehicleComponent.vue'
+import WeaponComponent from '../components/pages/DataOptions/WeaponComponent.vue'
 
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         name: "Kjøretøy",
         path: "/add/veichles",
         component: VehicleComponent
+    },
+    {
+        name: "Våpen",
+        path: "/add/weapons",
+        component: WeaponComponent
     },
 ];
 
