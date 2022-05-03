@@ -12,10 +12,10 @@ const soldierService = (function(){
         soldiers.value = request.data;
     } )()
 
-    const getAll = () => soldiers;
+    const getAllSoldiers = () => soldiers;
 
 
-    const getById = async (id) => {
+    const getSoldiersById = async (id) => {
         const request = await axios.get(`https://localhost:7075/soldier/${id}`);
         return request;
     }
@@ -25,8 +25,8 @@ const soldierService = (function(){
     }
 
     return {
-        getAll,
-        getById,
+        getAllSoldiers,
+        getSoldiersById,
         putSoldier
     }
 }() );
