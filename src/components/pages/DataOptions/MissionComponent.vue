@@ -20,7 +20,7 @@
                 </div>
                 <div class="content-flex">
                     <!--UPLOAD-->
-                    <div id="mission-img-upload" class="mission-card">
+                    <!-- <div id="mission-img-upload" class="mission-card">
                         <h2>BILDEOPPLASTING</h2>
                         <hr>
                         <h3>Beskrivelse</h3>
@@ -35,7 +35,7 @@
                             <input @changes="setImage" type="file">
                         </div>
                         <input @click="saveMission" type="button" value="Lagre bildet">
-                    </div>
+                    </div> -->
 
                     <!--PUT-->
                     <div id="mission-edit" class="mission-card">
@@ -44,12 +44,10 @@
                         <input v-model="id" type="text">
                         <input @click="getMission" type="button" value="Hent"><br><br>
                         
-                        <h3>Oppdragsnummer</h3>
-                        <input v-model="mission" type="text">
                         <h3>Beskrivelse</h3>
                         <input v-model="missionDescription" type="text">
                         <h3>Lokasjon</h3>
-                        <input v-model="missionLocation" type="number">
+                        <input v-model="missionLocation" type="text">
                         <h3>Hemmelig (true = ja / false = nei)</h3>
                         <input v-model="secret" type="boolean">
                         
@@ -97,49 +95,27 @@ export default {
     },
 
     setup(){
-
-        const formMission = reactive({
-            beskrivelse:"",
-            lokasjon:"",
-            oppdragsnummer: 0,
-            image: ""
-        });
-        const image = new FormData();
-        
-        const setImage = ( e ) => {
-            image.append("file", e.target.files[0]);
-            formMission.image = e.target.files[0].name;
-
-        }
-        const saveMission = () => {
-            const newMission = {
-                beskrivelse: formMission.beskrivelse,
-                lokasjon: formMission.lokasjon,
-                oppdragsnummer: parseInt(formMission.oppdragsnummer),
-                image: formMission.image
-                
-            };
-            missionService.putMission( newMission, image);
-
-        }
     
+        //FROM HERE
         const missionForm = reactive({  
             id: "",
-            missionName: "",
-            description: "",
-            location: "",
-            isSecret: "",
+            missionDescription: "",
+            missionLocation: "",
+            secret: "",
             
         });
 
         const getMission = async () => {
+            console.log (missionForm.id)
+
             const mission = await missionService.getMissionById( missionForm.id );
 
+            console.log(mission)
+
             missionForm.id = mission.id;
-            missionForm.missionName = mission.missionName;
-            missionForm.description = mission.description;
-            missionForm.location = mission.location;
-            missionForm.isSecret = mission.isSecret;
+            missionForm.missionDescription = mission.missionDescription;
+            missionForm.missionLocation = mission.missionLocation;
+            missionForm.secret = mission.secret;
            
         }
 
@@ -147,10 +123,9 @@ export default {
 
             const editedMission = {
                 id: parseInt( missionForm.id ),
-                missionName: missionForm.missionName,
-                description: missionForm.description,
-                location: parseInt( missionForm.caliber ),
-                isSecret: missionForm.isSecret,
+                missionDescription: missionForm.missionDescription,
+                missionLocation: missionForm.missionLocation,
+                secret: missionForm.secret,
                 
             }
 
@@ -159,9 +134,7 @@ export default {
 
 
         return {
-            ...toRefs(formMission),
-            setImage,
-            saveMission,
+            ...toRefs(missionForm),
             changeMission,
             getMission
         }

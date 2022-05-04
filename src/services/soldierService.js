@@ -42,7 +42,7 @@ const soldierService = (function(){
         getAllSoldiers,
         getSoldierById,
         putSoldier,
-        deleteSoldier
+       deleteSoldier
     }
 }() );
 

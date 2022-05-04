@@ -81,7 +81,7 @@
                         <h2>SLETT</h2>
                         <hr>
                         <h3>Hent person med id</h3>
-                        <input v-model="deleteId" type="text" id="deleteMyS oldier">
+                        <input v-model="deleteId" type="text"> 
                         <br><br>
                         <input @click="deleteASoldier" type="button" value="Slett">
                     </div>
@@ -106,6 +106,7 @@ export default {
             age: "",
             soldierType: "",
             rank: "",
+            deleteId: "",
         });
 
         const getSoldier = async () => {
@@ -134,19 +135,19 @@ export default {
             alert("Database endret!")
         }
 
-        // const deleteSoldierId = document.getElementById('deleteMySoldier').value; DETTE VIL JEG GJØRE ...
+        const deleteASoldier = async () => {
 
-        // const deleteASoldier = async () => {
+            alert(`Du har nå slettet en soldat fra databasen med id: ${soldierForm.deleteId} og navn ${soldierForm.firstName + " " +soldierForm.lastName}`)
 
-        //      alert(deleteSoldierId);
-        //      soldierService.deleteSoldier( );
-        //  }
+            soldierService.deleteSoldier( soldierForm.deleteId );
+
+        }
 
         return{
 
             getSoldier,
             changeSoldier,
-            // deleteASoldier,
+            deleteASoldier,
             ...toRefs( soldierForm )
         } 
     },
