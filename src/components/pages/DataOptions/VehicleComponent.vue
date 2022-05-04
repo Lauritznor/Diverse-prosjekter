@@ -96,14 +96,56 @@
         </article>
     </section>
 </template>
-<script>
+<script>import vehicleService from '../../../services/vehicleService.js'
 import AddData from '../AddData.vue'
+import { reactive, toRefs } from 'vue'
 
 export default {
-    components: {
-        AddData
+    setup(){
+
+        const vehicleForm = reactive({  
+            id: "",
+            veichleName: "",
+            veichleType: "",
+            weight: "",
+            isArmoured: "",
+            
+        });
+
+        const getVehicle = async () => {
+            const vehicle = await vehicleService.getVehicleById( vehicleForm.id );
+
+            vehicleForm.id = vehicle.id;
+            vehicleForm.veichleName = vehicle.veichleName;
+            vehicleForm.veichleType = vehicle.veichleType;
+            vehicleForm.weight = vehicle.weight;
+            vehicleForm.isArmoured = vehicle.isArmoured;
+            
+        }
+
+        const changeVehicle = async () => {
+
+            const editedVehicle = {
+                id: parseInt( vehicleForm.id ),
+                veichleName: vehicleForm.veichleName,
+                veichleType: vehicleForm.veichleType,
+                weight: parseInt( vehicleForm.weight ),
+                isArmoured: vehicleForm.isArmoured,
+                
+            }
+
+            vehicleService.putWeapon( editedVehicle );
+        }
+
+        return{
+            getVehicle,
+            changeVehicle,
+            ...toRefs( vehicleForm )
+        } 
     },
-    
+    components: {
+        AddData,
+    }
 }
 </script>
 <style scoped>
