@@ -40,11 +40,21 @@ const vehicleService = (function(){
         
     }
 
+    const addVehicle = async (newVehicle) => {
+        await axios.post("https://localhost:7075/vehicle/", newVehicle)
+    }
+
+    const deleteVehicle = async ( vehicleToDeleteId ) => {
+        await axios.delete(`https://localhost:7075/vehicle/${vehicleToDeleteId}`)
+    }
+
     return {
-        getAllVehicles,
         getVehiclesById,
+        getVehicleById,
         putVehicle,
-        getVehicleById
+        addVehicle,
+        deleteVehicle,
+        getAllVehicles
     }
 }() );
 

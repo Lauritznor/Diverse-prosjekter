@@ -15,10 +15,7 @@ const weaponService = (function(){
     const getAllWeapons = () => weapons;
 
 
-    const getWeaponsById = async (id) => {
-        const request = await axios.get(`https://localhost:7075/weapon/${id}`);
-        return request;
-    }
+    
 
     const getWeaponById = async (id) => {
         const request = await axios.get(`https://localhost:7075/weapon/${id}`);
@@ -41,14 +38,21 @@ const weaponService = (function(){
 
     }
 
+    const addWeapon = async (newWeapon) => {
+        await axios.post("https://localhost:7075/weapon/", newWeapon)
+    }
 
-
+    const deleteWeapon = async ( weaponToDeleteId ) => {
+        await axios.delete(`https://localhost:7075/weapon/${weaponToDeleteId}`)
+    }
 
     return {
         getAllWeapons,
-        getWeaponsById,
+        getWeaponById,
         putWeapon,
-        getWeaponById
+        addWeapon,
+        deleteWeapon,
+        
     }
 }() );
 
