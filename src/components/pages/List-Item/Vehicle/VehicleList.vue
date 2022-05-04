@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="flex-item">
         <vehicle-item v-for="(vehicle, i) in vehicles"
         :key="i"
             :id="vehicle.id"
@@ -29,3 +29,9 @@ export default {
 }
 
 </script>
+<style scoped>
+    .flex-item{
+        display: flex;
+        justify-content: center;
+    }
+</style>

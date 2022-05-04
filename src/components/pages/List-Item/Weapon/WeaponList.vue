@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="flex-item">
         <weapon-item v-for="(weapon, i) in weapons"
         :key="i"
         :id="weapon.id"
@@ -30,9 +30,8 @@ export default {
 }
 </script>
 <style scoped>
-.card {
-    background-color: white;
-    padding: 10px;
-    margin: 10px;
-}
+    .flex-item{
+        display: flex;
+        justify-content: center;
+    }
 </style>

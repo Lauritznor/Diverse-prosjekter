@@ -25,7 +25,7 @@ export default {
 </script>
 <style scoped>
 .card {
-    background-color: white;
+    background-color: #f1f1f1;
     padding: 10px;
     margin: 10px;
 }
