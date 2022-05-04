@@ -34,6 +34,10 @@ const soldierService = (function(){
         soldiers.value[index].rank = editedSoldier.rank;
     }
 
+    const addSoldier = async (newSoldier) => {
+        await axios.put(`https://localhost:7075/soldier/${newSoldier}`)
+    }
+
     const deleteSoldier = async ( soldierToDeleteId ) => {
         await axios.delete(`https://localhost:7075/soldier/${soldierToDeleteId}`)
     }
@@ -42,7 +46,8 @@ const soldierService = (function(){
         getAllSoldiers,
         getSoldierById,
         putSoldier,
-       deleteSoldier
+        addSoldier,
+        deleteSoldier
     }
 }() );
 

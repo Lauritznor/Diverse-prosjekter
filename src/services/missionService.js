@@ -19,7 +19,7 @@ const missionService = (function(){
         return request.data;
     }
 
-    const putMission =  async (editedMission) => {
+    const editMission =  async (editedMission) => {
 
         await axios.put("https://localhost:7075/mission", editedMission) 
 
@@ -36,7 +36,7 @@ const missionService = (function(){
 
     return {
         getAllMissions,
-        putMission,
+        editMission,
         getMissionById
     }
 }() );
