@@ -30,7 +30,7 @@
                         <input v-model="missionLocation" type="text">
 
                         <h3>Oppdragsnummer</h3>
-                        <input v-model="mission.id" type="number">
+                        <input v-model="mission" type="number">
                         <div>
                             <input @changes="setImage" type="file">
                         </div>
@@ -38,14 +38,14 @@
                     </div>
 
                     <!--PUT-->
-                    <div id="mission-edit" class="content-card">
+                    <div id="mission-edit" class="mission-card">
                         <h2>ENDRE</h2> <hr>
                         <h3>Hent oppdrag med id</h3>
                         <input v-model="id" type="text">
                         <input @click="getMission" type="button" value="Hent"><br><br>
                         
                         <h3>Oppdragsnummer</h3>
-                        <input v-model="missiion.id" type="text">
+                        <input v-model="mission" type="text">
                         <h3>Beskrivelse</h3>
                         <input v-model="missionDescription" type="text">
                         <h3>Lokasjon</h3>
@@ -152,6 +152,6 @@ export default {
 }
 .content-flex{
     display: flex;
-
+    flex-wrap: wrap;
 }
 </style>

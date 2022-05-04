@@ -20,14 +20,38 @@ const weaponService = (function(){
         return request;
     }
 
-    const putWeapon = () => {
+    
 
+    
+    const getWeaponById = async (id) => {
+        const request = await axios.get(`https://localhost:7075/weapon/${id}`);
+        return request.data;
     }
+
+    const putWeapon =  async (editedWeapon) => {
+
+        await axios.put("https://localhost:7075/weapon", editedWeapon) 
+
+        const temporaryArray = JSON.parse( JSON.stringify( weapons.value ) );
+
+        const index = temporaryArray.findIndex( weapons => parseInt( weapons.id ) === parseInt( weapons.id ) );
+
+        weapons.value[index].weaponName = editedWeapon.weaponName;
+        weapons.value[index].weaponCategory = editedWeapon.weaponCategory;
+        weapons.value[index].caliber = editedWeapon.caliber;
+        weapons.value[index].magazineSize = editedWeapon.magazineSize;
+        weapons.value[index].manufacturer = editedWeapon.manufacturer;
+        
+    }
+
+
+
 
     return {
         getAllWeapons,
         getWeaponsById,
-        putWeapon
+        putWeapon,
+        getWeaponById
     }
 }() );
 
