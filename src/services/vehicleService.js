@@ -4,7 +4,7 @@ import { ref } from "vue";
 const vehicleService = (function(){
 
     const vehicles = ref( [ 
-        {id: 1, vehicleName:"Feltvogn", veichleType: "Tanks", weight: 3000, isArmored: false },
+        {id: 1, veichleName:"Feltvogn", veichleType: "Tanks", weight: 3000, isArmored: false },
     ] );
 
     ( async () => {  
@@ -33,7 +33,7 @@ const vehicleService = (function(){
 
         const index = temporaryArray.findIndex( vehicles => parseInt( vehicles.id ) === parseInt( vehicles.id ) );
 
-        vehicles.value[index].vehicleName = editedVehicle.veichleName;
+        vehicles.value[index].veichleName = editedVehicle.veichleName;
         vehicles.value[index].veichleType = editedVehicle.veichleType;
         vehicles.value[index].weight = editedVehicle.weight;
         vehicles.value[index].isArmored = editedVehicle.isArmoured;
