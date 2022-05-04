@@ -126,31 +126,31 @@ export default {
             const weapon = await weaponService.getWeaponById( weaponForm.id );
 
             weaponForm.id = weapon.id;
-            weaponForm.weaponName = weapon.firstName;
-            weaponForm.lastName = weapon.lastName;
-            weaponForm.age = weapon.age;
-            weaponForm.soldierType = weapon.weaponCategory;
-            weaponForm.rank = weapon.rank;
+            weaponForm.weaponName = weapon.weaponName;
+            weaponForm.magazineSize = weapon.magazineSize;
+            weaponForm.caliber = weapon.caliber;
+            weaponForm.weaponCategory = weapon.weaponCategory;
+            weaponForm.manufacturer = weapon.manufacturer;
         }
 
         const changeWeapon = async () => {
 
-            const editedSoldier = {
-                id: parseInt( soldierForm.id ),
-                firstName: soldierForm.firstName,
-                lastName: soldierForm.lastName,
-                age: parseInt( soldierForm.age ),
-                soldierType: soldierForm.soldierType,
-                rank: soldierForm.rank
+            const editedWeapon = {
+                id: parseInt( weaponForm.id ),
+                weaponName: weaponForm.weaponName,
+                manufacturer: weaponForm.manufacturer,
+                caliber: parseInt( weaponForm.caliber ),
+                magazineSize: weaponForm.magazineSize,
+                
             }
 
-            soldierService.putSoldier( editedSoldier );
+            weaponService.putWeapon( editedWeapon );
         }
 
         return{
-            getSoldier,
-            changeSoldier,
-            ...toRefs( soldierForm )
+            getWeapon,
+            changeWeapon,
+            ...toRefs( weaponForm )
         } 
     },
     components: {
