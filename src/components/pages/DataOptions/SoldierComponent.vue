@@ -122,7 +122,6 @@ export default {
 
         const addNewSoldier = async () => {
             const newSoldier = {
-                id: parseInt( soldierForm.id ),
                 firstName: soldierForm.firstName,
                 lastName: soldierForm.lastName,
                 age: parseInt( soldierForm.age ),
@@ -134,7 +133,8 @@ export default {
             console.log(newSoldier);
             console.log(stringifiedSoldier);
 
-            soldierService.addSoldier( stringifiedSoldier );
+            soldierService.addSoldier( newSoldier );
+
             alert("Database endret! Lagt til: " + stringifiedSoldier)
         }
 

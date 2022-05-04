@@ -35,7 +35,7 @@ const soldierService = (function(){
     }
 
     const addSoldier = async (newSoldier) => {
-        await axios.put(`https://localhost:7075/soldier/${newSoldier}`)
+        await axios.post("https://localhost:7075/soldier/", newSoldier)
     }
 
     const deleteSoldier = async ( soldierToDeleteId ) => {
