@@ -74,18 +74,25 @@
     </section>
 </template>
 <script>
-import AddData from '../AddData.vue'
 import missionService from '../../../services/missionService.js'
 import {reactive, toRefs} from 'vue'
 
 export default {
-    components: {
-        AddData
-    },
 
+    //IMAGE
     setup(){
-    
-        //FROM HERE
+        const postMission = async (newMission, image) => {
+        const request = await axios.post("https://localhost:7075/mission", newMission);
+        const imagePostRequest = await axios({
+            method: "POST",
+            url: `${ "https://localhost:7075/mission"}/saveIMage`,
+            data: image,
+            config: { header: { "Content-Type": "multipart/form-data"}}
+        }); console.log(request + " " + imagePostRequest);
+        }
+
+
+        //
         const missionForm = reactive({  
             id: "",
             missionDescription: "",
