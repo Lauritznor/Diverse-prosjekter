@@ -24,15 +24,13 @@
                 <div class="card card-body">
                     <h3>Soldater</h3>
                     <soldier-component></soldier-component>
-                    
                 </div>
             </div>
 
             <div class="collapse" id="allMissions">
                 <div class="card card-body">
                     <h3>Oppdrag</h3>
-                    <mission-component> </mission-component>
-                    
+                    <mission-component> </mission-component>   
                 </div>
             </div>
             
@@ -40,7 +38,6 @@
                 <div class="card card-body">
                     <h3>Våpen</h3>
                     <weapon-component> </weapon-component>
-                    
                 </div>
             </div>
 
@@ -48,7 +45,6 @@
                 <div class="card card-body">
                     <h3>Kjøretøy</h3>
                     <vehicle-component> </vehicle-component>
-                    
                 </div>
             </div>
         </div>

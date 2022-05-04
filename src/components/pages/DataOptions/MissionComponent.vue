@@ -3,29 +3,79 @@
         <add-data></add-data>
         <article class="data-content">
             <div>
-
-  
-                 <div class="header-parent">
-                    <div class="header">
-                        <h5> konfigurer et... </h5>
-                        <h1> OPPDRAG </h1>
-
-                    </div> 
-                </div> 
-                <div class="center-div">
-                    <h3>Beskrivelse</h3>
-                    <input v-model="beskrivelse" type="text">
-
-                    <h3>Lokasjon</h3>
-                    <input v-model="lokasjon" type="text">
-
-                    <h3>Oppdragsnummer</h3>
-                    <input v-model="oppdragsnummer" type="number">
+                <div class="menu">
+                    <h4>Meny</h4>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#mission-img-upload" aria-expanded="false" aria-controls="collapseExample">
+                        <p>Last opp bilde</p>
+                    </button>
+                    <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#mission-edit" aria-expanded="false" aria-controls="collapseExample">
+                        <p>Endre</p>
+                    </button>
+                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#mission-add" aria-expanded="false" aria-controls="collapseExample">
+                        <p>Opprett</p>
+                    </button>
+                    <button class="btn btn-danger " type="button" data-bs-toggle="collapse" data-bs-target="#mission-delete" aria-expanded="false" aria-controls="collapseExample">
+                        <p>Slett</p>
+                    </button>
                 </div>
-                <div>
-                    <input @changes="setImage" type="file">
+                <div class="content-flex">
+                    <!--UPLOAD-->
+                    <div id="mission-img-upload" class="mission-card">
+                        <h2>BILDEOPPLASTING</h2>
+                        <hr>
+                        <h3>Beskrivelse</h3>
+                        <input v-model="beskrivelse" type="text">
+
+                        <h3>Lokasjon</h3>
+                        <input v-model="lokasjon" type="text">
+
+                        <h3>Oppdragsnummer</h3>
+                        <input v-model="oppdragsnummer" type="number">
+                        <div>
+                            <input @changes="setImage" type="file">
+                        </div>
+                        <input @click="saveMission" type="button" value="Lagre bildet">
+                    </div>
+
+                    <!--PUT-->
+                    <div id="mission-edit" class="mission-card">
+                        <h2>ENDRE</h2>
+                        <hr>
+                        <h3>Hent oppdrag med id</h3>
+                        <input type="number">
+                        <h3>Oppdrag lokalisasjon</h3>
+                        <input type="number">
+                        <h3>Oppdragsbeskrivelse</h3>
+                        <input type="number">
+                        <h3>Hemmelig (0=nei, 1=ja)</h3>
+                        <input type="number">
+                        <br><br>
+                        <input type="button" value="Endre">
+                    </div>
+
+                    <!--POST-->
+                    <div id="mission-add" class="mission-card">
+                        <h2>OPPRETT</h2>
+                        <hr>
+                        <h3>Oppdrag lokalisasjon</h3>
+                        <input type="number">
+                        <h3>Oppdragsbeskrivelse</h3>
+                        <input type="number">
+                        <br><br>
+                        <input type="button" value="Endre">
+                    </div>
+
+                    <!--DELETE-->
+                    <div id="mission-delete" class="mission-card">
+                        <h2>SLETT</h2>
+                        <hr>
+                        <h3>Hent oppdrag med id</h3>
+                        <input type="text">
+                        <br><br>
+                        <input type="button" value="Slett">
+                    </div>
                 </div>
-                <input @click="saveMission" type="button" value="Lagre oppdrag">
+
             </div>
         </article>
     </section>
@@ -75,4 +125,26 @@ export default {
 }
 </script>
 <style scoped>
+.menu {
+    padding: 10px;
+    margin: 5px;
+    margin-bottom: 15px;
+    background-color: #cfcfcf;
+    border-bottom: 6px solid #b4b3b3;
+}
+.menu button {
+    margin: 5px;
+}
+.menu button > p {
+    margin: 3px;
+}
+.mission-card{
+    background-color: #cfcfcf;
+    margin: 5px;
+    padding: 7px;
+    width: 350px;
+}
+.content-flex{
+    display: flex;
+}
 </style>
