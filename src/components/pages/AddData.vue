@@ -47,10 +47,7 @@
 }
 .tab-item:nth-child(odd){
     background-color: #6b7245;
-}
-.tab-item:hover{
-    background-color: #a3aa83;
-}
+}   
 .tab-link{
     color: black;
     text-decoration: none;

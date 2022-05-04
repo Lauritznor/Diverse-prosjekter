@@ -1,6 +1,6 @@
 <template>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark p-3"> 
+    <nav class="navbar navbar-expand-lg navbar-dark p-3 main-nav"> 
 
         <!-- LOGO -->
         <div class="brand forsvaret-brand">
@@ -42,7 +42,7 @@ export default{
 .search-form button{
     margin: 0px 5px;
 }
-nav{
+.main-nav{
     display: flex;
     justify-content: space-between !important; /* Using !important to overwrite bootstrap */
     background-color: #3c421a !important;

@@ -12,8 +12,7 @@
   <!-- Copyright -->
 </footer>
 </template>
-<script>
-</script>
+
 <style>
 .icons{
     display: flex;

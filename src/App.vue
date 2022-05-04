@@ -19,8 +19,7 @@ export default {
   }
 }
 </script>
-
-<style>
+<style scoped>
 
 /* ROBOTO - HOVED FONT FOR HELE NETTSIDEN */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
