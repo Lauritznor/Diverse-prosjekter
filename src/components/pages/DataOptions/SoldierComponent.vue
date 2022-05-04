@@ -170,7 +170,9 @@ export default {
     margin: 3px;
 }
 .content-card{
-    background-color: #cfcfcf;
+    background-color: #e9e9e9;
+    border-radius: 4px;
+    border: 1px solid lightgray;
     margin: 5px;
     padding: 7px;
     width: 350px;
