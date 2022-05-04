@@ -4,19 +4,18 @@
         <article class="data-content">
             <div>
 
-
                 <div class="menu">
                     <h4>Meny</h4>
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#mission-img-upload" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#img-upload" aria-expanded="false" aria-controls="collapseExample">
                         <p>Last opp bilde</p>
                     </button>
-                    <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#mission-edit" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#edit" aria-expanded="false" aria-controls="collapseExample">
                         <p>Endre</p>
                     </button>
-                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#mission-add" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#add" aria-expanded="false" aria-controls="collapseExample">
                         <p>Opprett</p>
                     </button>
-                    <button class="btn btn-danger " type="button" data-bs-toggle="collapse" data-bs-target="#mission-delete" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-danger " type="button" data-bs-toggle="collapse" data-bs-target="#delete" aria-expanded="false" aria-controls="collapseExample">
                         <p>Slett</p>
                     </button>
                 </div>
@@ -24,7 +23,7 @@
 
                 <div class="content-flex">
                     <!--UPLOAD-->
-                    <div id="mission-img-upload" class="content-card">
+                    <div id="img-upload" class="content-card">
                         <h2>BILDEOPPLASTING</h2>
                         <hr>
                         <h3>Beskrivelse</h3>
@@ -42,7 +41,7 @@
                     </div>
 
                     <!--PUT-->
-                    <div id="mission-edit" class="content-card">
+                    <div id="edit" class="content-card">
                         <h2>ENDRE</h2> <hr>
                         <h3>Hent soldat med id</h3>
                         <input v-model="id" type="text">
@@ -65,7 +64,7 @@
                     </div>
 
                     <!--POST-->
-                    <div id="mission-add" class="content-card">
+                    <div id="add" class="content-card">
                         <h2>OPPRETT</h2>
                         <p>Id - Opprettes av databasen</p>
                         <hr>
@@ -78,7 +77,7 @@
                     </div>
 
                     <!--DELETE-->
-                    <div id="mission-delete" class="content-card">
+                    <div id="delete" class="content-card">
                         <h2>SLETT</h2>
                         <hr>
                         <h3>Hent oppdrag med id</h3>
@@ -86,6 +85,7 @@
                         <br><br>
                         <input type="button" value="Slett">
                     </div>
+
                 </div>
             </div>
         </article>
