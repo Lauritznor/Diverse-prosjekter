@@ -74,18 +74,26 @@
     </section>
 </template>
 <script>
-import AddData from '../AddData.vue'
 import missionService from '../../../services/missionService.js'
 import {reactive, toRefs} from 'vue'
 
 export default {
-    components: {
-        AddData
-    },
-
     setup(){
-    
-        //FROM HERE
+
+
+        //IMAGE
+        // const postMission = async (newMission, image) => {
+        // const request = await axios.post("https://localhost:7075/mission", newMission);
+        // const imagePostRequest = await axios({
+        //     method: "POST",
+        //     url: `${ "https://localhost:7075/mission"}/saveIMage`,
+        //     data: image,
+        //     config: { header: { "Content-Type": "multipart/form-data"}}
+        // }); console.log(request + " " + imagePostRequest);
+        // }
+
+
+        //GET V MODELS
         const missionForm = reactive({  
             id: "",
             missionDescription: "",
@@ -95,6 +103,7 @@ export default {
             
         });
 
+        //GET
         const getMission = async () => {
             console.log (missionForm.id)
 
@@ -109,6 +118,7 @@ export default {
            
         }
 
+        //EDIT
         const changeMission = async () => {
 
             const editedMission = {
@@ -125,7 +135,7 @@ export default {
         }
 
 
-        //POST - LEGG TIL NY PERSON
+        //POST - LEGG TIL 
         const addNewMission = async () => {
             const newMission = {
                 missionDescription: missionForm.missionDescription,
@@ -172,7 +182,9 @@ export default {
     margin: 3px;
 }
 .mission-card{
-    background-color: #cfcfcf;
+    background-color: #e9e9e9;
+    border-radius: 4px;
+    border: 1px solid lightgray;
     margin: 5px;
     padding: 7px;
     width: 350px;
