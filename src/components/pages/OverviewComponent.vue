@@ -28,28 +28,28 @@
     <div class="main-parent">
         <div>
             <div class="collapse margin" id="allSoldiers">
-                <div>
+                <div class="box">
                     <h3>Soldater</h3>
                     <soldier-list></soldier-list> 
                 </div>
             </div>
 
             <div class="collapse margin" id="allMissions">
-                <div>
+                <div class="box">
                     <h3>Oppdrag</h3>
                     <mission-list></mission-list>
                 </div>
             </div>
             
             <div class="collapse margin" id="allWeapons">
-                <div>
+                <div class="box">
                     <h3>Våpen</h3>
                     <weapon-list></weapon-list>
                 </div>
             </div>
 
             <div class="collapse margin" id="allVehicles">
-                <div>
+                <div class="box">
                     <h3>Kjøretøy</h3>
                     <vehicle-list></vehicle-list>
                 </div>
@@ -84,7 +84,7 @@ export default {
     min-height: 90vh;
 }
 .display{
-    background-color: #aeaeae;
+    background-color:#92c49e;
 }
 .display-btns{
     margin: 0px;
@@ -114,5 +114,12 @@ svg.bi-info-circle-fill{
 .margin div > h3{
     margin-left: 10px;
     text-decoration: underline;
+}
+.box{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    background: white;
+    border: 1px solid lightgray;
 }
 </style>

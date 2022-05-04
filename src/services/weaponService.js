@@ -14,9 +14,6 @@ const weaponService = (function(){
 
     const getAllWeapons = () => weapons;
 
-
-    
-
     const getWeaponById = async (id) => {
         const request = await axios.get(`https://localhost:7075/weapon/${id}`);
         return request.data;

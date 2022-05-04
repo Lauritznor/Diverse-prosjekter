@@ -1,5 +1,5 @@
 <template>
-    <article class="card">
+    <article class="col-md-3 card">
         <h5>Mission Id</h5>
         <h4>{{id}}</h4>
         <h5>Er oppdraget hemmelig?</h5>
@@ -28,6 +28,5 @@ export default {
     background-color: #f1f1f1;
     padding: 10px;
     margin: 10px;
-    width: 300px;
 }
 </style>

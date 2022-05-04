@@ -78,7 +78,6 @@
     </section>
 </template>
 <script>import vehicleService from '../../../services/vehicleService.js'
-import AddData from '../AddData.vue'
 import { reactive, toRefs } from 'vue'
 
 export default {
@@ -129,17 +128,17 @@ export default {
                 weight: parseInt( vehicleForm.weight ),
                 isArmoured: vehicleForm.isArmoured
             }
-            const stringifiedSoldier = JSON.stringify( newVehicle );
+            const stringifiedVehicle = JSON.stringify( newVehicle );
 
             vehicleService.addVehicle( newVehicle );
 
-            alert("Database endret! Lagt til: " + stringifiedSoldier)
+            alert("Database endret! Lagt til: " + stringifiedVehicle)
         }
 
         //DELETE - SLETT PERSON
         const deleteAVehicle = async () => {
 
-            alert(`Du har nå slettet en soldat fra databasen med id: ${vehicleForm.deleteId} og navn ${vehicleForm.veichleName + ", " + vehicleForm.veichleType}`)
+            alert(`Du har nå slettet et kjøretøy fra databasen med id: ${vehicleForm.deleteId} og navn ${vehicleForm.veichleName + ", " + vehicleForm.veichleType}`)
             vehicleService.deleteVehicle( vehicleForm.deleteId );
 
         }
@@ -153,9 +152,6 @@ export default {
             ...toRefs( vehicleForm )
         } 
     },
-    components: {
-        AddData,
-    }
 }
 </script>
 <style scoped>
