@@ -6,11 +6,7 @@
 
                  <div class="header-parent">
                     
-                </div> 
-
-               
-                
-            </div>
+                </div> </div>
             <div>
                 <div class="menu">
                     <h4>Meny</h4>
@@ -29,7 +25,7 @@
                 </div>
                 <div class="content-flex">
                     <!--UPLOAD-->
-                    <div id="vehicle-img-upload" class="content-card">
+                    <div id="weapon-img-upload" class="content-card">
                         <h2>BILDEOPPLASTING</h2>
                         <hr>
                         <h3>Navn</h3>
@@ -52,7 +48,7 @@
                     </div>
 
                     <!--PUT-->
-                    <div id="content-edit" class="content-card">
+                    <div id="mission-edit" class="content-card">
                         <h2>ENDRE</h2>
                         <hr>
                         <h3>Hent våpen med navn</h3>
@@ -70,7 +66,7 @@
                     </div>
 
                     <!--POST-->
-                    <div id="content-add" class="content-card">
+                    <div id="mission-add" class="content-card">
                         <h2>OPPRETT</h2>
                         <hr>
                         <h3>Våpen Navn</h3>
@@ -88,7 +84,7 @@
                     </div>
 
                     <!--DELETE-->
-                    <div id="content-delete" class="content-card">
+                    <div id="mission-delete" class="content-card">
                         <h2>SLETT</h2>
                         <hr>
                         <h3>Hent våpen med navn</h3>
