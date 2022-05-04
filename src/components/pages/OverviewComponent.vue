@@ -1,5 +1,4 @@
 <template>
-<!-- <aside-component></aside-component> -->
     <div class="main-parent">
 
         <div class="display-btns">
