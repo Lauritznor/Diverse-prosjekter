@@ -115,11 +115,11 @@ export default {
 
         const weaponForm = reactive({  
             id: "",
-            firstName: "",
-            lastName: "",
-            age: "",
-            soldierType: "",
-            rank: "",
+            weaponName: "",
+            magazineSize: "",
+            caliber: "",
+            weaponCategory: "",
+            manufacturer: "",
         });
 
         const getWeapon = async () => {

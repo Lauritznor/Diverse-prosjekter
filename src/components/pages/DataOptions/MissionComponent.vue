@@ -119,13 +119,51 @@ export default {
                 image: formMission.image
                 
             };
-            missionService.postMission( newMission, image);
+            missionService.putMission( newMission, image);
 
         }
+    
+        const missionForm = reactive({  
+            id: "",
+            missionName: "",
+            description: "",
+            location: "",
+            isSecret: "",
+            
+        });
+
+        const getMission = async () => {
+            const mission = await missionService.getMissionById( missionForm.id );
+
+            missionForm.id = mission.id;
+            missionForm.missionName = mission.missionName;
+            missionForm.description = mission.description;
+            missionForm.location = mission.location;
+            missionForm.isSecret = mission.isSecret;
+           
+        }
+
+        const changeMission = async () => {
+
+            const editedMission = {
+                id: parseInt( missionForm.id ),
+                missionName: missionForm.missionName,
+                description: missionForm.description,
+                location: parseInt( missionForm.caliber ),
+                isSecret: missionForm.isSecret,
+                
+            }
+
+            missionService.putMission( editedMission );
+        }
+
+
         return {
             ...toRefs(formMission),
             setImage,
-            saveMission
+            saveMission,
+            changeMission,
+            getMission
         }
     }
 }
