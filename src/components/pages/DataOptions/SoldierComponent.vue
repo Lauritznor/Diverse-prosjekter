@@ -5,7 +5,6 @@
             <div>
 
                 <div class="menu">
-                    <h4>Meny</h4>
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#img-upload" aria-expanded="false" aria-controls="collapseExample">
                         <p>Last opp bilde</p>
                     </button>
@@ -164,8 +163,6 @@ export default {
     padding: 10px;
     margin: 5px;
     margin-bottom: 15px;
-    background-color: #cfcfcf;
-    border-bottom: 6px solid #b4b3b3;
 }
 .menu button {
     margin: 5px;

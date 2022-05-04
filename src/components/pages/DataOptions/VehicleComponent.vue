@@ -4,15 +4,11 @@
         <article class="data-content">
                  <div>
                 <div class="menu">
-                    <h4>Meny</h4>
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#mission-img-upload" aria-expanded="false" aria-controls="collapseExample">
                         <p>Last opp bilde</p>
                     </button>
-                    <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#mission-edit" aria-expanded="false" aria-controls="collapseExample">
-                        <p>Endre</p>
-                    </button>
-                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#mission-add" aria-expanded="false" aria-controls="collapseExample">
-                        <p>Opprett</p>
+                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="edit" aria-expanded="false" aria-controls="collapseExample">
+                        <p>Endre/opprett</p>
                     </button>
                     <button class="btn btn-danger " type="button" data-bs-toggle="collapse" data-bs-target="#mission-delete" aria-expanded="false" aria-controls="collapseExample">
                         <p>Slett</p>
@@ -41,7 +37,7 @@
                     </div>
 
                     <!--PUT-->
-                    <div id="mission-edit" class="content-card">
+                    <div id="edit" class="content-card">
                         <h2>ENDRE</h2> <hr>
                         <h3>Hent kjøretøy med id</h3>
                         <input v-model="id" type="text">
@@ -55,27 +51,9 @@
                         <input v-model="weight" type="number">
                         <h3>Pansret</h3>
                         <input v-model="isArmoured" type="text">
-                       
-
 
                         <br><br>
                         <input @click="changeVehicle" type="button" value="Endre">
-                    </div>
-
-                    <!--POST-->
-                    <div id="mission-add" class="content-card">
-                        <h2>OPPRETT</h2>
-                        <hr>
-                        <h3>Kjøretøy Navn</h3>
-                        <input type="string">
-                        <h3>Kjøretøy type</h3>
-                        <input type="string">
-                        <h3>Kjøretøy vekt</h3>
-                        <input type="number">
-                        <h3>Er kjøretøy pansret (true = ja / false = nei)</h3>
-                        <input type="boolean">
-                        <br><br>
-                        <input type="button" value="Endre">
                     </div>
 
                     <!--DELETE-->
@@ -154,8 +132,6 @@ export default {
     padding: 10px;
     margin: 5px;
     margin-bottom: 15px;
-    background-color: #cfcfcf;
-    border-bottom: 6px solid #b4b3b3;
 }
 .menu button {
     margin: 5px;

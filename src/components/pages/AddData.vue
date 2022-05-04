@@ -19,7 +19,7 @@
             </button>
         </div>
 
-        <div>
+        <div class="flex-center">
             <div class="collapse" id="allSoldiers">
                 <div class="card card-body">
                     <h3>Soldater</h3>
@@ -66,8 +66,6 @@ export default {
        SoldierComponent,
        VehicleComponent,
        WeaponComponent
-       
-     
    },
    
 }
@@ -88,5 +86,16 @@ export default {
 .display-btns button > p{
     margin: 10px
 }
-
+.card h3{
+    text-align: center;
+}
+.card-body{
+    margin: 30px;
+    padding: 40px;
+}
+.flex-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 </style>
