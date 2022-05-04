@@ -84,7 +84,7 @@ export default {
     min-height: 90vh;
 }
 .display{
-    background-color: #aeaeae;
+    background-color:#92c49e;
 }
 .display-btns{
     margin: 0px;

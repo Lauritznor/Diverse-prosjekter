@@ -78,7 +78,7 @@ export default {
     min-height: 90vh;
 }
 .display-btns{
-    background-color: gray;
+    background-color: #92c49e;
 }
 .display-btns button{
     margin: 10px;
