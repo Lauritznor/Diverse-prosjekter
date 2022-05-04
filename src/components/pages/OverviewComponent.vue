@@ -3,7 +3,7 @@
     <div class="display">
         
         <div class="info">
-            <p>Trykk på knappene for å åpne og lukke oversikten for de ulike dataene</p>
+            <p>Trykk på knappene for å åpne og lukke oversikten for de ulike dataene i databasen.</p>
         </div>
 
         <div class="display-btns">
