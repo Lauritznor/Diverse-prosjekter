@@ -77,7 +77,7 @@ export default {
 <style scoped>
 .main-parent{
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
 }
 .display-btns{
     background-color: gray;

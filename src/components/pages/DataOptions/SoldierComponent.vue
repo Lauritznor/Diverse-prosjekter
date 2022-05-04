@@ -45,7 +45,7 @@
                     <div id="mission-edit" class="content-card">
                         <h2>ENDRE</h2> <hr>
                         <h3>Hent soldat med id</h3>
-                        <input v-model="id" type="number">
+                        <input v-model="id" type="text">
                         <input @click="getSoldier" type="button" value="Hent"><br><br>
                         
                         <h3>Fornavn</h3>
@@ -61,12 +61,13 @@
 
 
                         <br><br>
-                        <input type="button" value="Endre">
+                        <input @click="changeSoldier" type="button" value="Endre">
                     </div>
 
                     <!--POST-->
                     <div id="mission-add" class="content-card">
                         <h2>OPPRETT</h2>
+                        <p>Id - Opprettes av databasen</p>
                         <hr>
                         <h3>Oppdrag lokalisasjon</h3>
                         <input type="number">
@@ -86,7 +87,6 @@
                         <input type="button" value="Slett">
                     </div>
                 </div>
-
             </div>
         </article>
     </section>
@@ -95,33 +95,54 @@
 import soldierService from '../../../services/soldierService'
 import AddData from '../AddData.vue'
 import { reactive, toRefs } from 'vue'
+
 export default {
     setup(){
 
         const soldierForm = reactive({  
-            id: 1,
-            firstName: "TEST",
-            lastName: "TEST",
-            age: 20,
-            soldierType: "Spesialsoldat",
-            rank: "TEST",
+            id: "",
+            firstName: "",
+            lastName: "",
+            age: "",
+            soldierType: "",
+            rank: "",
         });
 
         const getSoldier = async () => {
-            const soldier = await soldierService.getSoldierById(soldierForm.serviceNumber);
+            const soldier = await soldierService.getSoldierById( soldierForm.id );
 
-            soldierForm.firstName = soldier.firstName;
-            soldierForm.lastName = soldier.lastName;
-            soldierForm.rank = soldier.rank;
+            console.log(soldier)
+
+            soldierForm.id = soldier.data.id;
+            soldierForm.firstName = soldier.data.firstName;
+            soldierForm.lastName = soldier.data.lastName;
+            soldierForm.age = soldier.data.age;
+            soldierForm.soldierType = soldier.data.soldierType;
+            soldierForm.rank = soldier.data.rank;
+        }
+
+         const changeSoldier = async () => {
+
+            const editedSoldier = {
+                id: parseInt( soldierForm.id ),
+                firstName: soldierForm.firstName,
+                lastName: soldierForm.lastName,
+                age: parseInt( soldierForm.age ),
+                soldierType: soldierForm.soldierType,
+                rank: soldierForm.rank
+            }
+
+            soldierService.putSoldier( editedSoldier );
         }
 
         return{
             getSoldier,
+            changeSoldier,
             ...toRefs( soldierForm )
         } 
     },
     components: {
-        AddData
+        AddData,
     }
 }
 </script>

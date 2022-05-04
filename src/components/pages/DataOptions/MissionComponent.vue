@@ -146,5 +146,6 @@ export default {
 }
 .content-flex{
     display: flex;
+
 }
 </style>

@@ -5,7 +5,7 @@
         <div class="info">
             <p>Trykk på knappene for å åpne og lukke oversikten for de ulike dataene i databasen.</p>
         </div>
-
+    
         <div class="display-btns">
             <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#allSoldiers" aria-expanded="false" aria-controls="collapseExample">
                 <p>Soldater</p>
@@ -82,7 +82,7 @@ export default {
 <style scoped>
 .main-parent{
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
 }
 .display{
     background-color: #aeaeae;

@@ -3,12 +3,14 @@ import { ref } from "vue";
 
 const soldierService = (function(){
 
+    const url = "https://localhost:7075/soldier";
+
     const soldiers = ref( [ 
         {id: 1, firstName: "Ola", lastName: "Nordmann", age: 21, soldierType: "Førstegangstjeneste", rank: "Menig" },
     ] );
 
     ( async () => {  
-        const request = await axios.get("https://localhost:7075/soldier");
+        const request = await axios.get(url);
         soldiers.value = request.data;
     } )()
 
@@ -20,8 +22,19 @@ const soldierService = (function(){
         return request;
     }
 
-    const putSoldier = () => {
+    const putSoldier =  async (editedSoldier) => {
 
+        await axios.put(url, editedSoldier) 
+
+        const temporaryArray = JSON.parse( JSON.stringify( soldiers.value ) );
+
+        const index = temporaryArray.findIndex( soldiers => parseInt( soldiers.id ) === parseInt( soldiers.id ) );
+
+        soldiers.value[index].firstName = editedSoldier.firstName;
+        soldiers.value[index].lastName = editedSoldier.lastName;
+        soldiers.value[index].age = editedSoldier.age;
+        soldiers.value[index].soldierType = editedSoldier.soldierType;
+        soldiers.value[index].rank = editedSoldier.rank;
     }
 
     return {
