@@ -80,10 +80,10 @@
                     <div id="delete" class="content-card">
                         <h2>SLETT</h2>
                         <hr>
-                        <h3>Hent oppdrag med id</h3>
-                        <input v-model="deleteId" type="number">
+                        <h3>Hent person med id</h3>
+                        <input v-model="deleteId" type="text" id="deleteMyS oldier">
                         <br><br>
-                        <input @click="deleteSoldier" type="button" value="Slett">
+                        <input @click="deleteASoldier" type="button" value="Slett">
                     </div>
 
                 </div>
@@ -131,21 +131,22 @@ export default {
             }
 
             soldierService.putSoldier( editedSoldier );
+            alert("Database endret!")
         }
 
-        const deleteASoldier = async () => {
+        // const deleteSoldierId = document.getElementById('deleteMySoldier').value; DETTE VIL JEG GJØRE ...
 
-            alert("works for me")
-            const soldierToDelete = {
-               
-            }
+        // const deleteASoldier = async () => {
 
-            soldierService.deleteSoldier( soldierToDelete );
-        }
+        //      alert(deleteSoldierId);
+        //      soldierService.deleteSoldier( );
+        //  }
+
         return{
+
             getSoldier,
             changeSoldier,
-            deleteASoldier,
+            // deleteASoldier,
             ...toRefs( soldierForm )
         } 
     },
