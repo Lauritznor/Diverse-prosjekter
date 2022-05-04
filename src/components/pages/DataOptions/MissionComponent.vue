@@ -127,7 +127,7 @@ export default {
                 missionLocation: missionForm.missionLocation,
                 secret: missionForm.secret,
             }
-
+              
             alert("Endret databasen!")
 
             missionService.editMission( editedMission );

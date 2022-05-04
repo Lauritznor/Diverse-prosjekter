@@ -129,9 +129,13 @@ export default {
                 soldierType: soldierForm.soldierType,
                 rank: soldierForm.rank
             }
+            const stringifiedSoldier = JSON.stringify( newSoldier);
 
-            soldierService.addSoldier( newSoldier );
-            alert("Database endret! Lagt til: " + soldierForm.firstName + " " + soldierForm.lastName)
+            console.log(newSoldier);
+            console.log(stringifiedSoldier);
+
+            soldierService.addSoldier( stringifiedSoldier );
+            alert("Database endret! Lagt til: " + stringifiedSoldier)
         }
 
         const deleteASoldier = async () => {
