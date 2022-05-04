@@ -92,7 +92,7 @@ export default {
         }
 
 
-        //
+        //GET V MODELS
         const missionForm = reactive({  
             id: "",
             missionDescription: "",
@@ -102,6 +102,7 @@ export default {
             
         });
 
+        //GET
         const getMission = async () => {
             console.log (missionForm.id)
 
@@ -116,6 +117,7 @@ export default {
            
         }
 
+        //EDIT
         const changeMission = async () => {
 
             const editedMission = {
@@ -132,7 +134,7 @@ export default {
         }
 
 
-        //POST - LEGG TIL NY PERSON
+        //POST - LEGG TIL NYTT OPPDRAG
         const addNewMission = async () => {
             const newMission = {
                 missionDescription: missionForm.missionDescription,
@@ -147,7 +149,7 @@ export default {
             alert("Database endret! Lagt til: " + stringifiedMission)
         }
 
-        //DELETE - SLETT PERSON
+        //DELETE - SLETT OPPDRAG
         const deleteAMission = async () => {
 
             alert(`Du har nå slettet en soldat fra databasen med id: ${missionForm.deleteId} og navn ${missionForm.missionDescription + " " + missionForm.missionLocation}`)

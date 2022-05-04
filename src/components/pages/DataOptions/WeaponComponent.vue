@@ -96,6 +96,7 @@ import { reactive, toRefs } from 'vue'
 export default {
     setup(){
 
+        //GET V-MODELS
         const weaponForm = reactive({  
             id: "",
             weaponName: "",
@@ -106,6 +107,7 @@ export default {
             deleteId: "",
         });
 
+        //GET
         const getWeapon = async () => {
             const weapon = await weaponService.getWeaponById( weaponForm.id );
 
@@ -117,6 +119,8 @@ export default {
             weaponForm.manufacturer = weapon.manufacturer;
         }
 
+
+        //PUT
         const changeWeapon = async () => {
 
             const editedWeapon = {
