@@ -2,8 +2,8 @@
     <div class="main-parent">
 
         <div class="display-btns">
-            <div>
-                <i class="bi bi-info-circle-fill">info</i>
+            <div class="yay">
+                <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
             </div>
             <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#allSoldiers" aria-expanded="false" aria-controls="collapseExample">
                 <p>Soldater</p>
@@ -56,6 +56,7 @@
 
 <script>
 import 'bootstrap/js/dist/collapse' //To enable Bootstrap collapse
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import SoldierList from './List-Item/Soldier/SoldierList.vue'
 import WeaponList from './List-Item/Weapon/WeaponList.vue'
 import MissionList from './List-Item/Mission/MissionList.vue'
@@ -63,18 +64,11 @@ import VehicleList from './List-Item/Vehicle/VehicleList.vue'
 
 export default {
    components: {
-       SoldierList,
-       WeaponList,
-       VehicleList,
-       MissionList,
+        SoldierList,
+        WeaponList,
+        VehicleList,
+        MissionList,
    },
-   setup(){
-       const test = () =>{
-
-       }
-       return {test}
-   },
-   
 }
 
 </script>
@@ -92,5 +86,16 @@ export default {
 }
 .display-btns button > p{
     margin: 10px
+}
+svg.bi-info-circle-fill{
+    height: 50px;
+    width: 50px;
+}
+.yay{
+    height: 200px;
+    width: 200px;
+}
+.yay i{
+    height: 200px;
 }
 </style>
