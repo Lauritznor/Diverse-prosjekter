@@ -87,7 +87,7 @@
                     <div id="mission-delete" class="content-card">
                         <h2>SLETT</h2>
                         <hr>
-                        <h3>Hent våpen med navn</h3>
+                        <h3>Slett våpen med navn</h3>
                         <input type="text">
                         <br><br>
                         <input type="button" value="Slett">
