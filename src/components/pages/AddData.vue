@@ -73,12 +73,6 @@ export default {
        
      
    },
-   setup(){
-       const test = () =>{
-
-       }
-       return {test}
-   },
    
 }
 

@@ -22,12 +22,23 @@ const missionService = (function(){
 
     const putMission = () => {
 
+    
+    }
+    const postMission = async (newMission, image) => {
+        const request = await axios.post("https://localhost:7075/mission", newMission);
+        const imagePostRequest = await axios({
+            method: "POST",
+            url: `${ "https://localhost:7075/mission"}/saveIMage`,
+            data: image,
+            config: { header: { "Content-Type": "multipart/form-data"}}
+        }); console.log(request + " " + imagePostRequest);
     }
 
     return {
         getAllMissions,
         getMissionsById,
-        putMission
+        putMission,
+        postMission
     }
 }() );
 

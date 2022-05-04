@@ -10,6 +10,23 @@
                         <h1> SOLDAT </h1>
                     </div> 
                 </div> 
+                <hr>
+                <div>
+                    <h3>Endre soldat</h3>
+                    <input type="text" placeholder="hent soldat etter id">
+                    <h4>Navn</h4>
+                    <input type="text">
+                    <h4>Etternavn</h4>
+                </div>
+<hr>
+                <div>
+                    <h3>Slett soldat</h3>
+                    <input type="text" placeholder="hent soldat etter id">
+                    <h4>Navn</h4>
+                    <input type="text">
+                    <h4>Etternavn</h4>
+                </div>
+<hr>
                 <div class="center-div">
                     <h3> Soldatnummer</h3>
                     <input v-model="serviceNumber" type="text">
