@@ -132,7 +132,7 @@ export default {
                 rank: soldierForm.rank
             }
 
-            soldierService.putSoldier( editedSoldier );
+            soldierService( editedSoldier );
         }
 
         return{

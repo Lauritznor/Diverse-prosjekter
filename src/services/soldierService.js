@@ -3,14 +3,12 @@ import { ref } from "vue";
 
 const soldierService = (function(){
 
-    const url = "https://localhost:7075/soldier";
-
     const soldiers = ref( [ 
         {id: 1, firstName: "Ola", lastName: "Nordmann", age: 21, soldierType: "Førstegangstjeneste", rank: "Menig" },
     ] );
 
     ( async () => {  
-        const request = await axios.get(url);
+        const request = await axios.get("https://localhost:7075/soldier");
         soldiers.value = request.data;
     } )()
 
@@ -19,12 +17,12 @@ const soldierService = (function(){
 
     const getSoldierById = async (id) => {
         const request = await axios.get(`https://localhost:7075/soldier/${id}`);
-        return request;
+        return request.data;
     }
 
     const putSoldier =  async (editedSoldier) => {
 
-        await axios.put(url, editedSoldier) 
+        await axios.put("https://localhost:7075/soldier", editedSoldier) 
 
         const temporaryArray = JSON.parse( JSON.stringify( soldiers.value ) );
 
