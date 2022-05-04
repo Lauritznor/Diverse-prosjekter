@@ -41,6 +41,7 @@
                     <div id="edit" class="content-card">
                         <h2>ENDRE/OPPRETT</h2> <hr>
                         <h3>Hent soldat med id</h3>
+                        <p>Id opprettes av database dersom man ønsker å opprette ny soldat</p>
                         <input v-model="id" type="text">
                         <input @click="getSoldier" type="button" value="Hent"><br><br>
                         
