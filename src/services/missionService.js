@@ -53,7 +53,7 @@ const missionService = (function(){
     return {
         getAllMissions,
         //getMissionsById,
-        putMission,
+        editMission,
         //postMission,
         getMissionById
     }
