@@ -41,7 +41,7 @@
                     <div id="mission-edit" class="mission-card">
                         <h2>ENDRE</h2> <hr>
                         <h3>Hent oppdrag med id</h3>
-                        <input v-model="id" type="text">
+                        <input v-model="id" type="number">
                         <input @click="getMission" type="button" value="Hent"><br><br>
                         
                         <h3>Oppdragsnummer</h3>
@@ -52,8 +52,6 @@
                         <input v-model="missionLocation" type="number">
                         <h3>Hemmelig (true = ja / false = nei)</h3>
                         <input v-model="secret" type="boolean">
-                        
-
 
                         <br><br>
                         <input @click="changeMission" type="button" value="Endre">
@@ -149,9 +147,8 @@ export default {
                 id: parseInt( missionForm.id ),
                 missionName: missionForm.missionName,
                 description: missionForm.description,
-                location: parseInt( missionForm.caliber ),
-                isSecret: missionForm.isSecret,
-                
+                location: parseInt( missionForm.location ),
+                isSecret: JSON.parse( missionForm.isSecret )
             }
 
             missionService.putMission( editedMission );
