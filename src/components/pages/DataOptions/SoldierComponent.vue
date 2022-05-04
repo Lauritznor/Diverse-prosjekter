@@ -81,9 +81,9 @@
                         <h2>SLETT</h2>
                         <hr>
                         <h3>Hent oppdrag med id</h3>
-                        <input type="text">
+                        <input v-model="deleteId" type="number">
                         <br><br>
-                        <input type="button" value="Slett">
+                        <input @click="deleteSoldier" type="button" value="Slett">
                     </div>
 
                 </div>
@@ -133,9 +133,19 @@ export default {
             soldierService.putSoldier( editedSoldier );
         }
 
+        const deleteASoldier = async () => {
+
+            alert("works for me")
+            const soldierToDelete = {
+               
+            }
+
+            soldierService.deleteSoldier( soldierToDelete );
+        }
         return{
             getSoldier,
             changeSoldier,
+            deleteASoldier,
             ...toRefs( soldierForm )
         } 
     },
