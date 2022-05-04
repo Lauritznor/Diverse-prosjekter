@@ -12,26 +12,23 @@ const missionService = (function(){
         missions.value = request.data;
     } )()
 
+    // const getMissionsById = async (id) => {
+    //     const request = await axios.get(`https://localhost:7075/mission/${id}`);
+    //     return request;
+    // }
+    
+    // const postMission = async (newMission, image) => {
+    //     const request = await axios.post("https://localhost:7075/mission", newMission);
+    //     const imagePostRequest = await axios({
+    //         method: "POST",
+    //         url: `${ "https://localhost:7075/mission"}/saveIMage`,
+    //         data: image,
+    //         config: { header: { "Content-Type": "multipart/form-data"}}
+    //     }); console.log(request + " " + imagePostRequest);
+    // }
+
     const getAllMissions = () => missions;
 
-
-    const getMissionsById = async (id) => {
-        const request = await axios.get(`https://localhost:7075/mission/${id}`);
-        return request;
-    }
-
-
-    
-    
-    const postMission = async (newMission, image) => {
-        const request = await axios.post("https://localhost:7075/mission", newMission);
-        const imagePostRequest = await axios({
-            method: "POST",
-            url: `${ "https://localhost:7075/mission"}/saveIMage`,
-            data: image,
-            config: { header: { "Content-Type": "multipart/form-data"}}
-        }); console.log(request + " " + imagePostRequest);
-    }
 
     const getMissionById = async (id) => {
         const request = await axios.get(`https://localhost:7075/mission/${id}`);
@@ -55,9 +52,9 @@ const missionService = (function(){
 
     return {
         getAllMissions,
-        getMissionsById,
+        //getMissionsById,
         putMission,
-        postMission,
+        //postMission,
         getMissionById
     }
 }() );
