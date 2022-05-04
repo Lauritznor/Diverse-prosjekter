@@ -1,17 +1,29 @@
 <template>
-    <aside class="aside"> 
-        <h1 id="overview-h1">OVERSIKT</h1>
-        <input type="button" value="Vis alle" class="aside-btn">
-        <hr>
-        <h3>VALG</h3>
-        <input type="button" value="Soldater" class="aside-btn" >
-        <input type="button" value="Oppdrag" class="aside-btn">
-        <input type="button" value="Kjøretøy" class="aside-btn">
-        <input type="button" value="Våpen" class="aside-btn">
-        <hr>
-        <h3>SØK ETTER ID</h3>
-        <input type="text" class="aside-btn">
-
+    <aside class="aside">
+        <h3>Soldater</h3>
+        <input type="button" value="Vis Soldater" class="aside-input" >
+         <div>
+            <input type="number" class="aside-input" placeholder="søk">
+            <input type="button" value="SØK" class="aside-btn" >
+        </div>
+        <h3>Oppdrag</h3>
+        <input type="button" value="Oppdrag" class="aside-input">
+        <div>
+            <input type="number" class="aside-input" placeholder="søk">
+            <input type="button" value="SØK" class="aside-btn" >
+        </div>
+        <h3>Kjøretøy</h3>
+        <input type="button" value="Kjøretøy" class="aside-input">
+        <div>
+            <input type="number" class="aside-input" placeholder="søk">
+            <input type="button" value="SØK" class="aside-btn" >
+        </div>
+        <h3>Våpen</h3>
+        <input type="button" value="Våpen" class="aside-input">
+        <div>
+            <input type="number" class="aside-input" placeholder="søk">
+            <input type="button" value="SØK" class="aside-btn" >
+        </div>
     </aside>
 </template>
 <script>
@@ -34,16 +46,11 @@ export default {
     width: 20%; /*MAIN SECTION SHOULD TAKE 80% OF PAGE WIDTH*/
     min-height: 90vh; /* CHANGE IN PHONE VIEW */
     display: flex;
-    align-items: center;
     background-color: white;
     flex-direction: column;
 }
-#overview-h1{
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-    background-color: #6b7245;
-    font-family: Arial, Helvetica, sans-serif;
+.aside h3{
+    margin: 10px;
 }
 #overview{
     width: 100%;
@@ -56,10 +63,13 @@ export default {
     padding: 10px;
     border-bottom: 2px solid #dedede;
 }
+.aside-input{
+    padding: 10px;
+    margin: 7px;
+    width: 70%;
+    text-align: center;
+}
 .aside-btn{
     padding: 10px;
-    margin: 10px;
-    width: 80%;
-    text-align: center;
 }
 </style>

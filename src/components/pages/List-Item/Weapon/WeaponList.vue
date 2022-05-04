@@ -1,6 +1,6 @@
 <template>
     <section>
-        <weapon-item v-for="(weapon, i) in missions"
+        <weapon-item v-for="(weapon, i) in weapons"
         :key="i"
         :id="weapon.id"
         :weaponName="weapon.weaponName"

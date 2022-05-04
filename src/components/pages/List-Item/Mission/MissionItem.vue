@@ -2,7 +2,7 @@
     <article class="card">
         <h5>Mission Id</h5>
         <h4>{{id}}</h4>
-        <h5>Is the mission secret?</h5>
+        <h5>Er oppdraget hemmelig?</h5>
         <h4>{{secret}}</h4>
         <hr>
         <h5>Oppdragsbeskrivelse</h5>

@@ -1,8 +1,6 @@
 <template>
     <div class="column">
-
-<h2 style="text-align: center;">KONFIGURER</h2>
-
+    
         <div class="tab-menu">
                 <div class="tab-item">
                     <router-link class="tab-link" to="/add/veichles">

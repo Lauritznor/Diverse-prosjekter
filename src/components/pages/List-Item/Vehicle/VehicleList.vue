@@ -6,8 +6,7 @@
             :veichleName="vehicle.veichleName"
             :veichleType="vehicle.veichleType"
             :weight="vehicle.weight"
-            :isArmored="vehicle.isArmored"
-            
+            :isArmoured="vehicle.isArmoured"
         ></vehicle-item>
     </section>
 </template>
