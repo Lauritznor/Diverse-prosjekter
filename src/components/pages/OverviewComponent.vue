@@ -29,28 +29,28 @@
 
         <div>
             <div class="collapse" id="allSoldiers">
-                <div class="card card-body">
+                <div>
                     <h3>Soldater</h3>
-                    <soldier-list ></soldier-list> 
+                    <soldier-list></soldier-list> 
                 </div>
             </div>
 
             <div class="collapse" id="allMissions">
-                <div class="card card-body">
+                <div>
                     <h3>Oppdrag</h3>
                     <mission-list></mission-list>
                 </div>
             </div>
             
             <div class="collapse" id="allWeapons">
-                <div class="card card-body">
+                <div>
                     <h3>Våpen</h3>
                     <weapon-list></weapon-list>
                 </div>
             </div>
 
             <div class="collapse" id="allVehicles">
-                <div class="card card-body">
+                <div>
                     <h3>Kjøretøy</h3>
                     <vehicle-list></vehicle-list>
                 </div>
