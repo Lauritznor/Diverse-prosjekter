@@ -12,13 +12,13 @@
                 </div> 
 
                 <div class="center-div">
-                    <h3>FIKS</h3>
+                    <h3>Type</h3>
                     <input type="text">
 
-                    <h3>FIKS</h3>
+                    <h3>Kaliber</h3>
                     <input type="text">
 
-                    <h3>FIKS</h3>
+                    <h3>Produsent</h3>
                     <input type="number">
                 </div>
                 
