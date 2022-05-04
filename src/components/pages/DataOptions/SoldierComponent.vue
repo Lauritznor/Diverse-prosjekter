@@ -55,7 +55,6 @@
                         <h3>Rank</h3>
                         <input v-model="rank" type="text">
 
-
                         <br><br>
                         <input @click="changeSoldier" type="button" value="Endre" style="margin: 2px;">
                         <input @click="addNewSoldier" type="button" value="Opprett" style="margin: 2px;">

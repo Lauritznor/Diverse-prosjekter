@@ -20,16 +20,16 @@
                         <h2>BILDEOPPLASTING</h2>
                         <hr>
                         <h3>Navn</h3>
-                        <input v-model="veichleName" type="text">
+                        <input type="text">
 
                         <h3>Type</h3>
-                        <input v-model="veichleType" type="text">
+                        <input type="text">
 
                         <h3>Vekt</h3>
-                        <input v-model="weight" type="number">
+                        <input type="number">
 
                         <h3> Pansret: </h3>
-                        <input v-model="isArmoured" type="boolean">
+                        <input type="boolean">
                         <div>
                             <input @changes="setImage" type="file">
                         </div>
@@ -40,6 +40,7 @@
                     <div id="edit" class="content-card">
                         <h2>ENDRE</h2> <hr>
                         <h3>Hent kjøretøy med id</h3>
+                        <p>Id opprettes av database dersom man ønsker å opprette nytt kjøretøy</p>
                         <input v-model="id" type="text">
                         <input @click="getVehicle" type="button" value="Hent"><br><br>
                         
@@ -50,10 +51,12 @@
                         <h3>Vekt</h3>
                         <input v-model="weight" type="number">
                         <h3>Pansret</h3>
-                        <input v-model="isArmoured" type="text">
+                        <p>0=false,1=true</p>
+                        <input v-model="isArmoured" type="number">
 
                         <br><br>
-                        <input @click="changeVehicle" type="button" value="Endre">
+                        <input @click="changeVehicle" type="button" value="Endre" style="margin: 2px;">
+                        <input @click="addNewVehicle" type="button" value="Opprett" style="margin: 2px;">
                     </div>
 
                     <!--DELETE-->
@@ -61,9 +64,9 @@
                         <h2>SLETT</h2>
                         <hr>
                         <h3>Slett kjøretøy med id</h3>
-                        <input type="text">
+                        <input type="text" v-model="deleteId">
                         <br><br>
-                        <input type="button" value="Slett">
+                        <input type="button" value="Slett" @onclick="deleteAVehicle">
                     </div>
                 </div>
 
@@ -81,15 +84,18 @@ import { reactive, toRefs } from 'vue'
 export default {
     setup(){
 
+        //HENTE V-MODELS
         const vehicleForm = reactive({  
             id: "",
             veichleName: "",
             veichleType: "",
             weight: "",
             isArmoured: "",
+            deleteId: ""
             
         });
 
+        //GET - HENTE UT
         const getVehicle = async () => {
             const vehicle = await vehicleService.getVehicleById( vehicleForm.id );
 
@@ -101,6 +107,7 @@ export default {
             
         }
 
+        //PUT - ENDRE ET KJØREØY
         const changeVehicle = async () => {
 
             const editedVehicle = {
@@ -108,16 +115,40 @@ export default {
                 veichleName: vehicleForm.veichleName,
                 veichleType: vehicleForm.veichleType,
                 weight: parseInt( vehicleForm.weight ),
-                isArmoured: vehicleForm.isArmoured,
-                
+                isArmoured: vehicleForm.isArmoured,   
             }
 
-            vehicleService.putWeapon( editedVehicle );
+            vehicleService.putVehicle( editedVehicle );
         }
 
+        //POST - LEGG TIL NY PERSON
+        const addNewVehicle = async () => {
+            const newVehicle = {
+                veichleName: vehicleForm.veichleName,
+                veichleType: vehicleForm.veichleType,
+                weight: parseInt( vehicleForm.weight ),
+                isArmoured: vehicleForm.isArmoured
+            }
+            const stringifiedSoldier = JSON.stringify( newVehicle );
 
+            vehicleService.addVehicle( newVehicle );
+
+            alert("Database endret! Lagt til: " + stringifiedSoldier)
+        }
+
+        //DELETE - SLETT PERSON
+        const deleteAVehicle = async () => {
+
+            alert(`Du har nå slettet en soldat fra databasen med id: ${vehicleForm.deleteId} og navn ${vehicleForm.veichleName + ", " + vehicleForm.veichleType}`)
+            vehicleService.deleteVehicle( vehicleForm.deleteId );
+
+        }
+
+        //RETURN
         return{
             getVehicle,
+            deleteAVehicle,
+            addNewVehicle,
             changeVehicle,
             ...toRefs( vehicleForm )
         } 
