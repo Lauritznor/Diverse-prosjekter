@@ -106,11 +106,55 @@
     </section>
 </template>
 <script>
+import weaponService from '../../../services/weaponService.js'
 import AddData from '../AddData.vue'
+import { reactive, toRefs } from 'vue'
 
 export default {
+    setup(){
+
+        const weaponForm = reactive({  
+            id: "",
+            firstName: "",
+            lastName: "",
+            age: "",
+            soldierType: "",
+            rank: "",
+        });
+
+        const getWeapon = async () => {
+            const weapon = await weaponService.getWeaponById( weaponForm.id );
+
+            weaponForm.id = weapon.id;
+            weaponForm.weaponName = weapon.firstName;
+            weaponForm.lastName = weapon.lastName;
+            weaponForm.age = weapon.age;
+            weaponForm.soldierType = weapon.weaponCategory;
+            weaponForm.rank = weapon.rank;
+        }
+
+        const changeWeapon = async () => {
+
+            const editedSoldier = {
+                id: parseInt( soldierForm.id ),
+                firstName: soldierForm.firstName,
+                lastName: soldierForm.lastName,
+                age: parseInt( soldierForm.age ),
+                soldierType: soldierForm.soldierType,
+                rank: soldierForm.rank
+            }
+
+            soldierService.putSoldier( editedSoldier );
+        }
+
+        return{
+            getSoldier,
+            changeSoldier,
+            ...toRefs( soldierForm )
+        } 
+    },
     components: {
-        AddData
+        AddData,
     }
 }
 </script>
