@@ -26,30 +26,29 @@
 
     </div>
     <div class="main-parent">
-
         <div>
-            <div class="collapse" id="allSoldiers">
+            <div class="collapse margin" id="allSoldiers">
                 <div>
                     <h3>Soldater</h3>
                     <soldier-list></soldier-list> 
                 </div>
             </div>
 
-            <div class="collapse" id="allMissions">
+            <div class="collapse margin" id="allMissions">
                 <div>
                     <h3>Oppdrag</h3>
                     <mission-list></mission-list>
                 </div>
             </div>
             
-            <div class="collapse" id="allWeapons">
+            <div class="collapse margin" id="allWeapons">
                 <div>
                     <h3>Våpen</h3>
                     <weapon-list></weapon-list>
                 </div>
             </div>
 
-            <div class="collapse" id="allVehicles">
+            <div class="collapse margin" id="allVehicles">
                 <div>
                     <h3>Kjøretøy</h3>
                     <vehicle-list></vehicle-list>
@@ -108,5 +107,12 @@ svg.bi-info-circle-fill{
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+.margin{
+    margin: 10px;
+}
+.margin div > h3{
+    margin-left: 10px;
+    text-decoration: underline;
 }
 </style>

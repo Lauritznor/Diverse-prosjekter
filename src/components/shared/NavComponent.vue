@@ -7,7 +7,7 @@
             <router-link class="navbar-brand" to="/">
                     <img :src="require(`@/assets/images/logos/forsvaret-logo.png`)" style="height: 50px;">
             </router-link>
-            <router-link class="navbar-brand forsvaret-text" to="/">FORSVARET</router-link>
+            <router-link class="navbar-brand forsvaret-text" to="/">FORSVARET | <i class="bi bi-house"></i></router-link>
         </div>
 
       
@@ -27,7 +27,7 @@
 </template>
 <script>
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import 'bootstrap-icons/font/bootstrap-icons.css'
 export default{
 }
 
