@@ -20,10 +20,6 @@ const vehicleService = (function(){
         return request;
     }
 
-    
-
-    
-
     const getVehicleById = async (id) => {
         const request = await axios.get(`https://localhost:7075/vehicle/${id}`);
         return request.data;

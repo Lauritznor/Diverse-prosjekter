@@ -41,7 +41,7 @@
                     <div id="mission-edit" class="mission-card">
                         <h2>ENDRE</h2> <hr>
                         <h3>Hent oppdrag med id</h3>
-                        <input v-model="id" type="text">
+                        <input v-model="id" type="number">
                         <input @click="getMission" type="button" value="Hent"><br><br>
                         
                         <h3>Beskrivelse</h3>
@@ -50,8 +50,6 @@
                         <input v-model="missionLocation" type="text">
                         <h3>Hemmelig (true = ja / false = nei)</h3>
                         <input v-model="secret" type="boolean">
-                        
-
 
                         <br><br>
                         <input @click="changeMission" type="button" value="Endre">
@@ -123,9 +121,10 @@ export default {
 
             const editedMission = {
                 id: parseInt( missionForm.id ),
-                missionDescription: missionForm.missionDescription,
-                missionLocation: missionForm.missionLocation,
-                secret: missionForm.secret,
+                missionName: missionForm.missionName,
+                description: missionForm.description,
+                location: parseInt( missionForm.location ),
+                isSecret: JSON.parse( missionForm.isSecret )
             }
               
             alert("Endret databasen!")
