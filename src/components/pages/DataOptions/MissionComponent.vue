@@ -78,18 +78,19 @@ import missionService from '../../../services/missionService.js'
 import {reactive, toRefs} from 'vue'
 
 export default {
-
-    //IMAGE
     setup(){
-        const postMission = async (newMission, image) => {
-        const request = await axios.post("https://localhost:7075/mission", newMission);
-        const imagePostRequest = await axios({
-            method: "POST",
-            url: `${ "https://localhost:7075/mission"}/saveIMage`,
-            data: image,
-            config: { header: { "Content-Type": "multipart/form-data"}}
-        }); console.log(request + " " + imagePostRequest);
-        }
+
+
+        //IMAGE
+        // const postMission = async (newMission, image) => {
+        // const request = await axios.post("https://localhost:7075/mission", newMission);
+        // const imagePostRequest = await axios({
+        //     method: "POST",
+        //     url: `${ "https://localhost:7075/mission"}/saveIMage`,
+        //     data: image,
+        //     config: { header: { "Content-Type": "multipart/form-data"}}
+        // }); console.log(request + " " + imagePostRequest);
+        // }
 
 
         //GET V MODELS
@@ -134,7 +135,7 @@ export default {
         }
 
 
-        //POST - LEGG TIL NYTT OPPDRAG
+        //POST - LEGG TIL 
         const addNewMission = async () => {
             const newMission = {
                 missionDescription: missionForm.missionDescription,
@@ -149,7 +150,7 @@ export default {
             alert("Database endret! Lagt til: " + stringifiedMission)
         }
 
-        //DELETE - SLETT OPPDRAG
+        //DELETE - SLETT PERSON
         const deleteAMission = async () => {
 
             alert(`Du har nå slettet en soldat fra databasen med id: ${missionForm.deleteId} og navn ${missionForm.missionDescription + " " + missionForm.missionLocation}`)
