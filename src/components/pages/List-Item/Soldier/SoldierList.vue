@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="flex-item">
         <soldier-item v-for="(soldier, i) in soldiers"
         :key="i"
             :id="soldier.id"
@@ -30,3 +30,11 @@ export default {
 }
 
 </script>
+<style scoped>
+    .flex-item{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin: 10px;
+    }
+</style>

@@ -32,6 +32,7 @@ export default {
 <style scoped>
     .flex-item{
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 </style>

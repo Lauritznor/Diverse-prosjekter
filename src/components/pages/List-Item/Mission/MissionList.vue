@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="flex-item">
         <mission-item v-for="(mission, i) in missions"
         :key="i"
             :id="mission.id"
@@ -26,5 +26,11 @@ export default {
         MissionItem
     }
 }
-
 </script>
+<style scoped>
+    .flex-item{
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+</style>

@@ -2,19 +2,22 @@
     <div class="main-parent">
 
         <div class="display-btns">
+            <div>
+                <i class="bi bi-info-circle-fill">info</i>
+            </div>
             <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#allSoldiers" aria-expanded="false" aria-controls="collapseExample">
                 <p>Soldater</p>
             </button>
 
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#allMissions" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-success" type="button" data-bs-toggle="collapse tooltip" data-bs-target="#allMissions" aria-expanded="false" aria-controls="collapseExample" data-bs-placement="bottom" title="Click">
                 <p>Oppdrag</p>
             </button>
 
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#allWeapons" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#allWeapons" aria-expanded="false" aria-controls="collapseExample">
                 <p>Våpen</p>
             </button>
 
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#allVehicles" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#allVehicles" aria-expanded="false" aria-controls="collapseExample">
                 <p>Kjøretøy</p>
             </button>
         </div>
@@ -80,6 +83,14 @@ export default {
 .main-parent{
     width: 100%;
     height: 90vh;
-    background-color: blue;
+}
+.display-btns{
+    background-color: gray;
+}
+.display-btns button{
+    margin: 10px;
+}
+.display-btns button > p{
+    margin: 10px
 }
 </style>
