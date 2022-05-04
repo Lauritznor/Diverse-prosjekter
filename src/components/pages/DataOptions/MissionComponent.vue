@@ -45,7 +45,7 @@
                         <input @click="getMission" type="button" value="Hent"><br><br>
                         
                         <h3>Oppdragsnummer</h3>
-                        <input v-model="mission.id" type="text">
+                        <input v-model="missiion.id" type="text">
                         <h3>Beskrivelse</h3>
                         <input v-model="missionDescription" type="text">
                         <h3>Lokasjon</h3>
