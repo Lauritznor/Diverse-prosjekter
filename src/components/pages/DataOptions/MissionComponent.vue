@@ -19,7 +19,7 @@
                 </div>
                 <div class="content-flex">
                     <!--UPLOAD-->
-                    <!-- <div id="mission-img-upload" class="mission-card">
+                     <div id="mission-img-upload" class="mission-card">
                         <h2>BILDEOPPLASTING</h2>
                         <hr>
                         <h3>Beskrivelse</h3>
@@ -34,36 +34,28 @@
                             <input @changes="setImage" type="file">
                         </div>
                         <input @click="saveMission" type="button" value="Lagre bildet">
-                    </div> -->
+                    </div> 
 
                     <!--PUT-->
-                    <div id="mission-edit" class="mission-card">
-                        <h2>ENDRE</h2> <hr>
+                      <div id="edit" class="mission-card">
+                        <h2>ENDRE/OPPRETT</h2> <hr>
                         <h3>Hent oppdrag med id</h3>
-                        <input v-model="id" type="number">
+                        <p>Id opprettes av database dersom man ønsker å opprette nytt oppdrag</p>
+                        <input v-model="id" type="text">
                         <input @click="getMission" type="button" value="Hent"><br><br>
                         
-                        <h3>Beskrivelse</h3>
+                        <h3>Oppdragsbeskrivelse</h3>
                         <input v-model="missionDescription" type="text">
                         <h3>Lokasjon</h3>
                         <input v-model="missionLocation" type="text">
-                        <h3>Hemmelig (true = ja / false = nei)</h3>
-                        <input v-model="secret" type="boolean">
+                        <h3>Hemmelig</h3>
+                        <input v-model="secret" type="number">
+                       
+                     
 
                         <br><br>
-                        <input @click="changeMission" type="button" value="Endre">
-                    </div>
-
-                    <!--POST-->
-                    <div id="mission-add" class="mission-card">
-                        <h2>OPPRETT</h2>
-                        <hr>
-                        <h3>Oppdrag lokalisasjon</h3>
-                        <input type="number">
-                        <h3>Oppdragsbeskrivelse</h3>
-                        <input type="number">
-                        <br><br>
-                        <input type="button" value="Endre">
+                        <input @click="changeMission" type="button" value="Endre" style="margin: 2px;">
+                        <input @click="addNewMission" type="button" value="Opprett" style="margin: 2px;">
                     </div>
 
                     <!--DELETE-->
@@ -99,6 +91,7 @@ export default {
             missionDescription: "",
             missionLocation: "",
             secret: "",
+            deleteId: "",
             
         });
 
@@ -120,10 +113,10 @@ export default {
 
             const editedMission = {
                 id: parseInt( missionForm.id ),
-                missionName: missionForm.missionName,
-                description: missionForm.description,
-                location: parseInt( missionForm.location ),
-                isSecret: JSON.parse( missionForm.isSecret )
+                missionDescription: missionForm.missionDescription,
+                missionLocation: missionForm.missionLocation,
+               
+                secret: JSON.parse( missionForm.secret )
             }
               
             alert("Endret databasen!")
@@ -132,10 +125,36 @@ export default {
         }
 
 
+        //POST - LEGG TIL NY PERSON
+        const addNewMission = async () => {
+            const newMission = {
+                missionDescription: missionForm.missionDescription,
+                missionLocation: missionForm.missionLocation,
+                secret: missionForm.secret
+                
+            }
+            const stringifiedMission = JSON.stringify(newMission);
+
+            missionService.addMission( newMission );
+
+            alert("Database endret! Lagt til: " + stringifiedMission)
+        }
+
+        //DELETE - SLETT PERSON
+        const deleteAMission = async () => {
+
+            alert(`Du har nå slettet en soldat fra databasen med id: ${missionForm.deleteId} og navn ${missionForm.missionDescription + " " + missionForm.missionLocation}`)
+            missionService.deleteMission( missionForm.deleteId );
+
+        }
+
+
         return {
             ...toRefs(missionForm),
             changeMission,
-            getMission
+            getMission,
+            deleteAMission,
+            addNewMission
         }
     }
 }
