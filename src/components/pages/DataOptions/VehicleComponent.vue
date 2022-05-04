@@ -38,7 +38,7 @@
 
                     <!--PUT-->
                     <div id="edit" class="content-card">
-                        <h2>ENDRE</h2> <hr>
+                        <h2>ENDRE/OPPRETT</h2> <hr>
                         <h3>Hent kjøretøy med id</h3>
                         <p>Id opprettes av database dersom man ønsker å opprette nytt kjøretøy</p>
                         <input v-model="id" type="text">
@@ -51,8 +51,8 @@
                         <h3>Vekt</h3>
                         <input v-model="weight" type="number">
                         <h3>Pansret</h3>
-                        <p>0=false,1=true</p>
-                        <input v-model="isArmoured" type="number">
+                        <p>false/true</p>
+                        <input v-model="isArmoured" type="text">
 
                         <br><br>
                         <input @click="changeVehicle" type="button" value="Endre" style="margin: 2px;">
