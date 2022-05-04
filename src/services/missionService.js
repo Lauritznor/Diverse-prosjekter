@@ -50,12 +50,23 @@ const missionService = (function(){
         
     }
 
+    const addMission = async (newMission) => {
+        await axios.post("https://localhost:7075/mission/", newMission)
+    }
+
+    const deleteMission = async ( missionToDeleteId ) => {
+        await axios.delete(`https://localhost:7075/mission/${missionToDeleteId}`)
+    }
+
+
     return {
         getAllMissions,
         //getMissionsById,
         editMission,
         //postMission,
-        getMissionById
+        getMissionById,
+        addMission,
+        deleteMission
     }
 }() );
 
