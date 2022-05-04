@@ -48,9 +48,13 @@
                     </div>
 
                     <!--PUT-->
-                <div id="mission-edit" class="content-card">
-                        <h2>ENDRE</h2> <hr>
+                 
+
+                    <!--POST-->
+                    <div id="mission-add" class="content-card">
+                        <h2>ENDRE/OPPRETT</h2> <hr>
                         <h3>Hent våpen med id</h3>
+                        <p>Id opprettes av database dersom man ønsker å opprette nytt våpen</p>
                         <input v-model="id" type="text">
                         <input @click="getWeapon" type="button" value="Hent"><br><br>
                         
@@ -58,34 +62,18 @@
                         <input v-model="weaponName" type="text">
                         <h3>Type</h3>
                         <input v-model="weaponCategory" type="text">
-                        <h3>Kaliber</h3>
+                        <h3>Caliber</h3>
                         <input v-model="caliber" type="number">
-                        <h3>Skudd i magasin</h3>
-                        <input v-model="magazineSize" type="number">
+                        <h3>Magasinkapasitet</h3>
+                        <input v-model="magazineSize" type="text">
                         <h3>Produsent</h3>
                         <input v-model="manufacturer" type="text">
 
 
                         <br><br>
-                        <input @click="changeWeapon" type="button" value="Endre">
-                    </div>
-
-                    <!--POST-->
-                    <div id="mission-add" class="content-card">
-                        <h2>OPPRETT</h2>
-                        <hr>
-                        <h3>Våpen Navn</h3>
-                        <input type="text">
-                        <h3>Våpentype</h3>
-                        <input type="text">
-                        <h3>Kaliber</h3>
-                        <input type="number">
-                        <h3>Kuler i magasin</h3>
-                        <input type="boolean">
-                        <h3>Produsent</h3>
-                        <input type="text">
-                        <br><br>
-                        <input type="button" value="Endre">
+                        <input @click="changeWeapon" type="button" value="Endre" style="margin: 2px;">
+                        <input @click="addNewWeapon" type="button" value="Opprett" style="margin: 2px;">
+                    
                     </div>
 
                     <!--DELETE-->
@@ -120,6 +108,7 @@ export default {
             caliber: "",
             weaponCategory: "",
             manufacturer: "",
+            deleteId: "",
         });
 
         const getWeapon = async () => {
@@ -147,9 +136,38 @@ export default {
             weaponService.putWeapon( editedWeapon );
         }
 
+
+         //POST - LEGG TIL NYTT VÅPEN
+        const addNewWeapon = async () => {
+            const newWeapon = {
+                weaponName: weaponForm.weaponName,
+                manufacturer: weaponForm.manufacturer,
+                caliber: parseInt( weaponForm.caliber ),
+                magazineSize: weaponForm.magazineSize,
+                
+            }
+            const stringifiedWeapon = JSON.stringify( newWeapon);
+
+            weaponService.addWeapon( newWeapon);
+
+            alert("Database endret! Lagt til: " + stringifiedWeapon)
+        }
+
+        //DELETE - SLETT VÅPEN
+        const deleteAWeapon = async () => {
+
+            alert(`Du har nå slettet et våpen fra databasen med id: ${weaponForm.deleteId} og navn ${weaponForm.weaponName + " " + weaponForm.manufacturer}`)
+            weaponService.deleteWeapon( weaponForm.deleteId );
+
+        }
+
+        //RETURN
+
         return{
             getWeapon,
             changeWeapon,
+            deleteAWeapon,
+            addNewWeapon,
             ...toRefs( weaponForm )
         } 
     },
