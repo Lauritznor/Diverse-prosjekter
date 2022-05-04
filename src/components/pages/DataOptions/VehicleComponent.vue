@@ -137,6 +137,7 @@ export default {
             vehicleService.putWeapon( editedVehicle );
         }
 
+
         return{
             getVehicle,
             changeVehicle,
