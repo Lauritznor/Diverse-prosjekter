@@ -14,7 +14,6 @@ const soldierService = (function(){
 
     const getAllSoldiers = () => soldiers;
 
-
     const getSoldierById = async (id) => {
         const request = await axios.get(`https://localhost:7075/soldier/${id}`);
         return request.data;

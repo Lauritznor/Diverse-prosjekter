@@ -92,7 +92,7 @@
     </section>
 </template>
 <script>
-import soldierService from '../../../services/soldierService'
+import soldierService from '../../../services/soldierService.js'
 import AddData from '../AddData.vue'
 import { reactive, toRefs } from 'vue'
 
@@ -111,17 +111,15 @@ export default {
         const getSoldier = async () => {
             const soldier = await soldierService.getSoldierById( soldierForm.id );
 
-            console.log(soldier)
-
-            soldierForm.id = soldier.data.id;
-            soldierForm.firstName = soldier.data.firstName;
-            soldierForm.lastName = soldier.data.lastName;
-            soldierForm.age = soldier.data.age;
-            soldierForm.soldierType = soldier.data.soldierType;
-            soldierForm.rank = soldier.data.rank;
+            soldierForm.id = soldier.id;
+            soldierForm.firstName = soldier.firstName;
+            soldierForm.lastName = soldier.lastName;
+            soldierForm.age = soldier.age;
+            soldierForm.soldierType = soldier.soldierType;
+            soldierForm.rank = soldier.rank;
         }
 
-         const changeSoldier = async () => {
+        const changeSoldier = async () => {
 
             const editedSoldier = {
                 id: parseInt( soldierForm.id ),
@@ -132,7 +130,7 @@ export default {
                 rank: soldierForm.rank
             }
 
-            soldierService( editedSoldier );
+            soldierService.putSoldier( editedSoldier );
         }
 
         return{
