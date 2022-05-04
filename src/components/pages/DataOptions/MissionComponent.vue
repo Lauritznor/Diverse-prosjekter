@@ -24,13 +24,13 @@
                         <h2>BILDEOPPLASTING</h2>
                         <hr>
                         <h3>Beskrivelse</h3>
-                        <input v-model="beskrivelse" type="text">
+                        <input v-model="missionDescription" type="text">
 
                         <h3>Lokasjon</h3>
-                        <input v-model="lokasjon" type="text">
+                        <input v-model="missionLocation" type="text">
 
                         <h3>Oppdragsnummer</h3>
-                        <input v-model="oppdragsnummer" type="number">
+                        <input v-model="mission.id" type="number">
                         <div>
                             <input @changes="setImage" type="file">
                         </div>
@@ -38,19 +38,25 @@
                     </div>
 
                     <!--PUT-->
-                    <div id="mission-edit" class="mission-card">
-                        <h2>ENDRE</h2>
-                        <hr>
+                    <div id="mission-edit" class="content-card">
+                        <h2>ENDRE</h2> <hr>
                         <h3>Hent oppdrag med id</h3>
-                        <input type="number">
-                        <h3>Oppdrag lokalisasjon</h3>
-                        <input type="number">
-                        <h3>Oppdragsbeskrivelse</h3>
-                        <input type="number">
-                        <h3>Hemmelig (0=nei, 1=ja)</h3>
-                        <input type="number">
+                        <input v-model="id" type="text">
+                        <input @click="getMission" type="button" value="Hent"><br><br>
+                        
+                        <h3>Oppdragsnummer</h3>
+                        <input v-model="missiion.id" type="text">
+                        <h3>Beskrivelse</h3>
+                        <input v-model="missionDescription" type="text">
+                        <h3>Lokasjon</h3>
+                        <input v-model="missionLocation" type="number">
+                        <h3>Hemmelig (true = ja / false = nei)</h3>
+                        <input v-model="secret" type="boolean">
+                        
+
+
                         <br><br>
-                        <input type="button" value="Endre">
+                        <input @click="changeMission" type="button" value="Endre">
                     </div>
 
                     <!--POST-->
