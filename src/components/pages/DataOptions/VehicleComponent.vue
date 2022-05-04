@@ -42,18 +42,24 @@
 
                     <!--PUT-->
                     <div id="mission-edit" class="content-card">
-                        <h2>ENDRE</h2>
-                        <hr>
-                        <h3>Hent kjøretøy med navn</h3>
-                        <input type="number">
-                        <h3>Kjøretøytype</h3>
-                        <input type="string">
-                        <h3>Er kjøretøyet pansret</h3>
-                        <input type="string">
-                        <h3>Kjøretøy vekt</h3>
-                        <input type="number">
+                        <h2>ENDRE</h2> <hr>
+                        <h3>Hent kjøretøy med id</h3>
+                        <input v-model="id" type="text">
+                        <input @click="getVehicle" type="button" value="Hent"><br><br>
+                        
+                        <h3>Navn</h3>
+                        <input v-model="veichleName" type="text">
+                        <h3>Type</h3>
+                        <input v-model="veichleType" type="text">
+                        <h3>Vekt</h3>
+                        <input v-model="weight" type="number">
+                        <h3>Pansret</h3>
+                        <input v-model="isArmoured" type="text">
+                       
+
+
                         <br><br>
-                        <input type="button" value="Endre">
+                        <input @click="changeVehicle" type="button" value="Endre">
                     </div>
 
                     <!--POST-->

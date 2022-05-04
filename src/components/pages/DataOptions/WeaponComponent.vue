@@ -48,21 +48,26 @@
                     </div>
 
                     <!--PUT-->
-                    <div id="mission-edit" class="content-card">
-                        <h2>ENDRE</h2>
-                        <hr>
-                        <h3>Hent våpen med navn</h3>
-                        <input type="number">
-                        <h3>Våpen kategori</h3>
-                        <input type="text">
+                <div id="mission-edit" class="content-card">
+                        <h2>ENDRE</h2> <hr>
+                        <h3>Hent våpen med id</h3>
+                        <input v-model="id" type="text">
+                        <input @click="getWeapon" type="button" value="Hent"><br><br>
+                        
+                        <h3>Navn</h3>
+                        <input v-model="weaponName" type="text">
+                        <h3>Type</h3>
+                        <input v-model="weaponCategory" type="text">
                         <h3>Kaliber</h3>
-                        <input type="text">
-                        <h3>kuler i magasinet</h3>
-                        <input type="number">
-                        <h3> Produsent</h3>
-                        <input type="text">
+                        <input v-model="caliber" type="number">
+                        <h3>Skudd i magasin</h3>
+                        <input v-model="magazineSize" type="number">
+                        <h3>Produsent</h3>
+                        <input v-model="manufacturer" type="text">
+
+
                         <br><br>
-                        <input type="button" value="Endre">
+                        <input @click="changeWeapon" type="button" value="Endre">
                     </div>
 
                     <!--POST-->
