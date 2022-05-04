@@ -37,28 +37,7 @@
                     </div>
 
                     <!--PUT-->
-                    <div id="edit" class="content-card">
-                        <h2>ENDRE/OPPRETT</h2> <hr>
-                        <h3>Hent soldat med id</h3>
-                        <p>Id opprettes av database dersom man ønsker å opprette ny soldat</p>
-                        <input v-model="id" type="text">
-                        <input @click="getSoldier" type="button" value="Hent"><br><br>
-                        
-                        <h3>Fornavn</h3>
-                        <input v-model="firstName" type="text">
-                        <h3>Etternavn</h3>
-                        <input v-model="lastName" type="text">
-                        <h3>Alder</h3>
-                        <input v-model="age" type="number">
-                        <h3>Soldat type</h3>
-                        <input v-model="soldierType" type="text">
-                        <h3>Rank</h3>
-                        <input v-model="rank" type="text">
-
-                        <br><br>
-                        <input @click="changeSoldier" type="button" value="Endre" style="margin: 2px;">
-                        <input @click="addNewSoldier" type="button" value="Opprett" style="margin: 2px;">
-                    </div>
+                 
 
                     <!--DELETE-->
                     <div id="delete" class="content-card">
