@@ -41,6 +41,7 @@ const weaponService = (function(){
         weapons.value[index].caliber = editedWeapon.caliber;
         weapons.value[index].magazineSize = editedWeapon.magazineSize;
         weapons.value[index].manufacturer = editedWeapon.manufacturer;
+        
     }
 
 

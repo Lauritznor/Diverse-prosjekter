@@ -102,7 +102,8 @@ import AddData from '../AddData.vue'
 export default {
     components: {
         AddData
-    }
+    },
+    
 }
 </script>
 <style scoped>
