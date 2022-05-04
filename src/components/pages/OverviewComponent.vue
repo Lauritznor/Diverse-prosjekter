@@ -1,15 +1,17 @@
 <template>
-    <div class="main-parent">
+<div class="flex-column">
+    <div class="display">
+        
+        <div class="info">
+            <p>Trykk på knappene for å åpne og lukke oversikten for de ulike dataene</p>
+        </div>
 
         <div class="display-btns">
-            <div class="yay">
-                <i class="fa fa-info-circle fa-5x" aria-hidden="true"></i>
-            </div>
             <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#allSoldiers" aria-expanded="false" aria-controls="collapseExample">
                 <p>Soldater</p>
             </button>
 
-            <button class="btn btn-success" type="button" data-bs-toggle="collapse tooltip" data-bs-target="#allMissions" aria-expanded="false" aria-controls="collapseExample" data-bs-placement="bottom" title="Click">
+            <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#allMissions" aria-expanded="false" aria-controls="collapseExample">
                 <p>Oppdrag</p>
             </button>
 
@@ -21,6 +23,9 @@
                 <p>Kjøretøy</p>
             </button>
         </div>
+
+    </div>
+    <div class="main-parent">
 
         <div>
             <div class="collapse" id="allSoldiers">
@@ -52,6 +57,7 @@
             </div>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -78,24 +84,29 @@ export default {
     width: 100%;
     height: 90vh;
 }
+.display{
+    background-color: #aeaeae;
+}
 .display-btns{
-    background-color: gray;
+    margin: 0px;
 }
 .display-btns button{
-    margin: 10px;
+    margin: 5px;
+}
+.info p{
+    padding: 5px;
+    margin: 0px;
 }
 .display-btns button > p{
-    margin: 10px
+    margin: 5px;        
 }
 svg.bi-info-circle-fill{
     height: 50px;
     width: 50px;
 }
-.yay{
-    height: 200px;
-    width: 200px;
-}
-.yay i{
-    height: 200px;
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 </style>

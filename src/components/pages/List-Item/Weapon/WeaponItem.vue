@@ -13,7 +13,7 @@
         <h4>{{magazineSize}}</h4>
         <hr>
         <h5>Kaliber</h5>
-        <h4>{{caliber}}</h4>
+        <h4>{{caliber}}mm</h4>
         <hr>
         <h5>Produsent</h5>
         <h4>{{manufacturer}}</h4>

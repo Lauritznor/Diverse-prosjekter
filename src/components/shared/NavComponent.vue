@@ -7,20 +7,17 @@
             <router-link class="navbar-brand" to="/">
                     <img :src="require(`@/assets/images/logos/forsvaret-logo.png`)" style="height: 50px;">
             </router-link>
-            <router-link class="navbar-brand forsvaret-text" to="/">Forsvaret</router-link>
+            <router-link class="navbar-brand forsvaret-text" to="/">FORSVARET</router-link>
         </div>
 
       
         <div class="links">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <router-link to="/" class="nav-link home">Hjem</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/overview" class="nav-link">Oversikt</router-link>
+                <li class="nav-item overview-link">
+                    <router-link to="/overview" class="nav-link">OVERSIKT</router-link>
                 </li>
                  <li class="nav-item">
-                    <router-link to="/add" class="nav-link">Konfigurer data (admin)</router-link>
+                    <router-link to="/add" class="nav-link config-link">KONFIGURER DATA (ADMIN)</router-link>
                 </li>
 
             </ul>
@@ -45,7 +42,7 @@ export default{
 .main-nav{
     display: flex;
     justify-content: space-between !important; /* Using !important to overwrite bootstrap */
-    background-color: #3c421a !important;
+    background-color: #136326 !important;
 }
 .forsvaret-brand{
     display: flex;
@@ -53,14 +50,14 @@ export default{
     align-items: center;
 }
 .forsvaret-text{
-    margin-top: 5px;
-}
-.home{
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-decoration: underline !important; /*OVERSKRIVE BOOTSTRAP*/
+    margin-top: 7px !important;
+    font-size: 30px !important;
+    color: rgba(152,185,156,255) !important;
 }
 .nav-link{
     font-size: 1.4rem;
+}
+.config-link{
+    border-left: 2px solid;
 }
 </style>
