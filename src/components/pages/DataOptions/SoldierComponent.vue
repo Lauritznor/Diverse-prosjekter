@@ -79,12 +79,12 @@
 </template>
 <script>
 import soldierService from '../../../services/soldierService.js'
-import AddData from '../AddData.vue'
 import { reactive, toRefs } from 'vue'
 
 export default {
     setup(){
 
+        // SOLDIERFORM - SKAFFER ALLE V-MODELS
         const soldierForm = reactive({  
             id: "",
             firstName: "",
@@ -95,6 +95,7 @@ export default {
             deleteId: "",
         });
 
+        //GET
         const getSoldier = async () => {
             const soldier = await soldierService.getSoldierById( soldierForm.id );
 
@@ -106,6 +107,7 @@ export default {
             soldierForm.rank = soldier.rank;
         }
 
+        //PUT - ENDRE SOLDIER INFO
         const changeSoldier = async () => {
 
             const editedSoldier = {
@@ -121,6 +123,7 @@ export default {
             alert("Database endret!")
         }
 
+        //POST - LEGG TIL NY PERSON
         const addNewSoldier = async () => {
             const newSoldier = {
                 firstName: soldierForm.firstName,
@@ -131,14 +134,12 @@ export default {
             }
             const stringifiedSoldier = JSON.stringify( newSoldier);
 
-            console.log(newSoldier);
-            console.log(stringifiedSoldier);
-
             soldierService.addSoldier( newSoldier );
 
             alert("Database endret! Lagt til: " + stringifiedSoldier)
         }
 
+        //DELETE - SLETT PERSON
         const deleteASoldier = async () => {
 
             alert(`Du har nå slettet en soldat fra databasen med id: ${soldierForm.deleteId} og navn ${soldierForm.firstName + " " + soldierForm.lastName}`)
@@ -146,6 +147,7 @@ export default {
 
         }
 
+        //RETURN
         return{
 
             getSoldier,
@@ -155,9 +157,6 @@ export default {
             ...toRefs( soldierForm )
         } 
     },
-    components: {
-        AddData,
-    }
 }
 </script>
 <style scoped>
