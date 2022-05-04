@@ -43,6 +43,8 @@
 
                         <h3> Kuler i magasin: </h3>
                         <input v-model="magazineSize" type="number">
+                        <h3>Produsent</h3>
+                        <input v-model="manufacturer" type="text">
                         <div>
                             <input @changes="setImage" type="file">
                         </div>
