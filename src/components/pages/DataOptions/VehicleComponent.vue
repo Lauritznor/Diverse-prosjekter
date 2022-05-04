@@ -82,7 +82,7 @@
                     <div id="mission-delete" class="content-card">
                         <h2>SLETT</h2>
                         <hr>
-                        <h3>Slett kjøretøy med navn</h3>
+                        <h3>Slett kjøretøy med id</h3>
                         <input type="text">
                         <br><br>
                         <input type="button" value="Slett">

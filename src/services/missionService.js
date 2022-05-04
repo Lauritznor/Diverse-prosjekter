@@ -35,15 +35,15 @@ const missionService = (function(){
         return request.data;
     }
 
-    const putMission =  async (editedMission) => {
+    const editMission =  async (editedMission) => {
 
         await axios.put("https://localhost:7075/mission", editedMission) 
 
         const temporaryArray = JSON.parse( JSON.stringify( missions.value ) );
 
-        const index = temporaryArray.findIndex( missions => parseInt( missions.id ) === parseInt( missions.id ) );
+        const index = temporaryArray.findIndex(missions=>parseInt(missions.id)===parseInt(editedMission.id)  );
 
-        missions.value[index].mission.id = editedMission.mission.id;
+        missions.value[index].id = editedMission.id;
         missions.value[index].missionDescription = editedMission.missionDescription;
         missions.value[index].missionLocation = editedMission.missionLocation;
         missions.value[index].secret = editedMission.secret;

@@ -9,11 +9,8 @@
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#img-upload" aria-expanded="false" aria-controls="collapseExample">
                         <p>Last opp bilde</p>
                     </button>
-                    <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#edit" aria-expanded="false" aria-controls="collapseExample">
-                        <p>Endre</p>
-                    </button>
-                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#add" aria-expanded="false" aria-controls="collapseExample">
-                        <p>Opprett</p>
+                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#edit" aria-expanded="false" aria-controls="collapseExample">
+                        <p>Endre/opprett</p>
                     </button>
                     <button class="btn btn-danger " type="button" data-bs-toggle="collapse" data-bs-target="#delete" aria-expanded="false" aria-controls="collapseExample">
                         <p>Slett</p>
@@ -42,7 +39,7 @@
 
                     <!--PUT-->
                     <div id="edit" class="content-card">
-                        <h2>ENDRE</h2> <hr>
+                        <h2>ENDRE/OPPRETT</h2> <hr>
                         <h3>Hent soldat med id</h3>
                         <input v-model="id" type="text">
                         <input @click="getSoldier" type="button" value="Hent"><br><br>
@@ -60,30 +57,18 @@
 
 
                         <br><br>
-                        <input @click="changeSoldier" type="button" value="Endre">
-                    </div>
-
-                    <!--POST-->
-                    <div id="add" class="content-card">
-                        <h2>OPPRETT</h2>
-                        <p>Id - Opprettes av databasen</p>
-                        <hr>
-                        <h3>Oppdrag lokalisasjon</h3>
-                        <input type="number">
-                        <h3>Oppdragsbeskrivelse</h3>
-                        <input type="number">
-                        <br><br>
-                        <input type="button" value="Endre">
+                        <input @click="changeSoldier" type="button" value="Endre" style="margin: 2px;">
+                        <input @click="addNewSoldier" type="button" value="Opprett" style="margin: 2px;">
                     </div>
 
                     <!--DELETE-->
                     <div id="delete" class="content-card">
                         <h2>SLETT</h2>
                         <hr>
-                        <h3>Hent oppdrag med id</h3>
-                        <input v-model="deleteId" type="number">
+                        <h3>Hent person med id</h3>
+                        <input v-model="deleteId" type="text"> 
                         <br><br>
-                        <input @click="deleteSoldier" type="button" value="Slett">
+                        <input @click="deleteASoldier" type="button" value="Slett">
                     </div>
 
                 </div>
@@ -106,6 +91,7 @@ export default {
             age: "",
             soldierType: "",
             rank: "",
+            deleteId: "",
         });
 
         const getSoldier = async () => {
@@ -131,21 +117,36 @@ export default {
             }
 
             soldierService.putSoldier( editedSoldier );
+            alert("Database endret!")
+        }
+
+        const addNewSoldier = async () => {
+            const newSoldier = {
+                id: parseInt( soldierForm.id ),
+                firstName: soldierForm.firstName,
+                lastName: soldierForm.lastName,
+                age: parseInt( soldierForm.age ),
+                soldierType: soldierForm.soldierType,
+                rank: soldierForm.rank
+            }
+
+            soldierService.addSoldier( newSoldier );
+            alert("Database endret! Lagt til: " + soldierForm.firstName + " " + soldierForm.lastName)
         }
 
         const deleteASoldier = async () => {
 
-            alert("works for me")
-            const soldierToDelete = {
-               
-            }
+            alert(`Du har nå slettet en soldat fra databasen med id: ${soldierForm.deleteId} og navn ${soldierForm.firstName + " " + soldierForm.lastName}`)
+            soldierService.deleteSoldier( soldierForm.deleteId );
 
-            soldierService.deleteSoldier( soldierToDelete );
         }
+
         return{
+
             getSoldier,
             changeSoldier,
             deleteASoldier,
+            addNewSoldier,
             ...toRefs( soldierForm )
         } 
     },
