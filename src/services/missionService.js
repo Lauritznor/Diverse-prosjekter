@@ -20,10 +20,9 @@ const missionService = (function(){
         return request;
     }
 
-    const putMission = () => {
 
     
-    }
+    
     const postMission = async (newMission, image) => {
         const request = await axios.post("https://localhost:7075/mission", newMission);
         const imagePostRequest = await axios({
@@ -34,11 +33,32 @@ const missionService = (function(){
         }); console.log(request + " " + imagePostRequest);
     }
 
+    const getMissionById = async (id) => {
+        const request = await axios.get(`https://localhost:7075/mission/${id}`);
+        return request.data;
+    }
+
+    const putMission =  async (editedMission) => {
+
+        await axios.put("https://localhost:7075/mission", editedMission) 
+
+        const temporaryArray = JSON.parse( JSON.stringify( missions.value ) );
+
+        const index = temporaryArray.findIndex( missions => parseInt( missions.id ) === parseInt( missions.id ) );
+
+        missions.value[index].mission.id = editedMission.mission.id;
+        missions.value[index].missionDescription = editedMission.missionDescription;
+        missions.value[index].missionLocation = editedMission.missionLocation;
+        missions.value[index].secret = editedMission.secret;
+        
+    }
+
     return {
         getAllMissions,
         getMissionsById,
         putMission,
-        postMission
+        postMission,
+        getMissionById
     }
 }() );
 
