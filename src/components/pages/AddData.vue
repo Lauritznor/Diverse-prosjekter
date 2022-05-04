@@ -6,15 +6,15 @@
                 <p>Konfigurer Soldater</p>
             </button>
 
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#allMissions" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#allMissions" aria-expanded="false" aria-controls="collapseExample">
                 <p>Konfigurer Oppdrag</p>
             </button>
 
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#allWeapons" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#allWeapons" aria-expanded="false" aria-controls="collapseExample">
                 <p>Konfigurer Våpen</p>
             </button>
 
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#allVehicles" aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#allVehicles" aria-expanded="false" aria-controls="collapseExample">
                 <p>Konfigurer Kjøretøy</p>
             </button>
         </div>
@@ -88,6 +88,15 @@ export default {
 .main-parent{
     width: 100%;
     height: 90vh;
-    background-color: blue;
 }
+.display-btns{
+    background-color: gray;
+}
+.display-btns button{
+    margin: 10px;
+}
+.display-btns button > p{
+    margin: 10px
+}
+
 </style>
