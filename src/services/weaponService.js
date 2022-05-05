@@ -66,8 +66,8 @@ const weaponService = (function(){
         putWeapon,
         addWeapon,
         deleteWeapon,
-        postWeapony
-        
+        postWeapon
+
         
     }
 }() );

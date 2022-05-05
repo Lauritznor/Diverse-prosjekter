@@ -42,7 +42,7 @@ const soldierService = (function(){
     const addSoldier = async (newSoldier) => {
         await axios.post("https://localhost:7075/soldier/", newSoldier)
     }
-      //POST
+      //POST IMAGE
       const postSoldier = async (newSoldier, image) => {
         const request = await axios.post("https://localhost:7075/soldier", newSoldier);
         const imagePostRequest = await axios({
