@@ -63,9 +63,9 @@
                         <h2>SLETT</h2>
                         <hr>
                         <h3>Hent oppdrag med id</h3>
-                        <input type="text">
+                        <input v-model="deleteId" type="text"> 
                         <br><br>
-                        <input type="button" value="Slett">
+                        <input @click="deleteAMission" type="button" value="Slett">
                     </div>
                 </div>
 
@@ -159,7 +159,8 @@ export default {
               
             alert("Endret databasen!")
 
-            missionService.editMission( editedMission );
+             missionService.editMission( editedMission );
+            alert("Database endret!")
         }
 
 
@@ -193,9 +194,13 @@ export default {
             getMission,
             deleteAMission,
             addNewMission,
+<<<<<<< HEAD
             postMission,
             setImage,
             saveMissionInfo
+=======
+            
+>>>>>>> 54eb998764251964b0977e83492d976ce5f7bca2
         }
     }
 }
