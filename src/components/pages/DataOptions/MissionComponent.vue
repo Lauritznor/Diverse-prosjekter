@@ -194,13 +194,9 @@ export default {
             getMission,
             deleteAMission,
             addNewMission,
-<<<<<<< HEAD
             postMission,
             setImage,
             saveMissionInfo
-=======
-            
->>>>>>> 54eb998764251964b0977e83492d976ce5f7bca2
         }
     }
 }
