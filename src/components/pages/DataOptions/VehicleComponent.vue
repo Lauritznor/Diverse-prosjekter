@@ -33,7 +33,7 @@
                         <div>
                             <input @changes="setImage" type="file">
                         </div>
-                        <input @click="saveVehicle" type="button" value="Lagre bildet">
+                        <input @click="saveVehicleInfo" type="button" value="Lagre bildet">
                     </div>
 
                     <!--PUT-->
@@ -119,6 +119,7 @@ export default {
 
         //SAVE
         let saveVehicleInfo = () => {
+            alert("Bildet er lagret!")
             let newVehicle = {
                 vehicleName: vehicleForm.vehicleName,
                 vehicleType: vehicleForm.vehicleType,
