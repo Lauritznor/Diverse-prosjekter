@@ -71,6 +71,9 @@
                     
                     </div>
 
+
+                    
+
                     <!--DELETE-->
                     <div id="mission-delete" class="content-card">
                         <h2>SLETT</h2>
@@ -91,7 +94,8 @@
 <script>
 import weaponService from '../../../services/weaponService.js'
 import AddData from '../AddData.vue'
-import { reactive, toRefs } from 'vue'
+import { reactive, toRefs } from 'vue' 
+import axios from 'vue'
 
 export default {
     setup(){
@@ -160,12 +164,50 @@ export default {
 
         }
 
+         //IMAGE
+        const image = new FormData();
+
+        const setImage = ( e ) => {
+            image.append("file", e.target.files[0]);
+            // eslint-disable-next-line no-const-assign
+            weaponForm = e.target.files[0].name;
+        } 
+
+        //SAVE
+        const saveWeaponInfo = () => {
+            alert("Bilde lagret!")
+            const newWeapon = {
+                weaponName: weaponForm.weaponName,
+                weaponCategory: weaponForm.weaponCategory,
+                caliber: weaponForm.caliber,
+                magazineSize: weaponForm.magazineSize,
+                manufacturer: weaponForm.manufacturer
+
+            };
+            weaponService.postMission ( newWeapon, image )
+        }
+
+        //POST
+        const postWeapon = async (newWeapon, image) => {
+        const request = await axios.post("https://localhost:7075/weapon", newWeapon);
+        const imagePostRequest = await axios({
+            method: "POST",
+            url: `${ "https://localhost:7075/weapon"}/saveIMage`,
+            data: image,
+            config: { header: { "Content-Type": "multipart/form-data"}}
+        }); console.log(request + " " + imagePostRequest);
+        }
+
+
         //RETURN
 
         return{
             getWeapon,
             changeWeapon,
             deleteAWeapon,
+            postWeapon,
+            saveWeaponInfo,
+            setImage,
             addNewWeapon,
             ...toRefs( weaponForm )
         } 
