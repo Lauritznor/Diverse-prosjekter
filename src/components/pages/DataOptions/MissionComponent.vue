@@ -100,6 +100,7 @@ export default {
 
         //SAVE
         const saveMissionInfo = () => {
+            alert("Bilde lagret!")
             const newMission = {
                 missionDescription: formMission.missionDescriptionImg,
                 missionLocation: formMission.missionLocationImg,
