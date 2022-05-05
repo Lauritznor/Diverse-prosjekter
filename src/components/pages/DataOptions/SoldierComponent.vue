@@ -64,7 +64,7 @@
                     <div id="delete" class="content-card">
                         <h2>SLETT</h2>
                         <hr>
-                        <h3>Hent person med id</h3>
+                        <h3>Slett person med id</h3>
                         <input v-model="deleteId" type="text"> 
                         <br><br>
                         <input @click="deleteASoldier" type="button" value="Slett">

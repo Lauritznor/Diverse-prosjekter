@@ -34,6 +34,8 @@ const missionService = (function(){
         const request = await axios.get(`https://localhost:7075/mission/${id}`);
         return request.data;
     }
+      //PUT (EDIT)
+
 
     const editMission =  async (editedMission) => {
 
@@ -66,7 +68,8 @@ const missionService = (function(){
         //postMission,
         getMissionById,
         addMission,
-        deleteMission
+        deleteMission,
+        
     }
 }() );
 
