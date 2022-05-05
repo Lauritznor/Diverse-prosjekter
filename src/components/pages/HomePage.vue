@@ -4,7 +4,7 @@
             <h1>Heisann!</h1>
             <p>
                 Dette er en applikasjon som er laget for å få oversikt over de ulike resurssene til det norske forsvaret.<br>
-                På siden får du oversikt over de ulike forsvarsgrenene, soldatene, kjøretøyene og oppdragene.<br> <br>
+                På siden får du oversikt over de ulike soldatene, kjøretøyene og oppdragene.<br> <br>
                 Den er laget for å kun brukes av forsvarets ansatte og ingen andre. Å ikke overholde dette vil bryte Rolandoloven § 2 og kan straffes med intill 2 ukers lorem skriving uten pause. Så dersom du ikke er en del av det norske forsvaret ber vi deg forlate nettsiden nå.
             </p>
             <h3>Oversikt</h3>

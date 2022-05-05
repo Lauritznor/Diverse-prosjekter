@@ -3,6 +3,7 @@ import { ref } from "vue";
 
 const weaponService = (function(){
 
+    //DUMMYDATA
     const weapons = ref( [ 
         {id: 1, weaponName: "HK 416", weaponCategory: "AutomatRIfle", magazineSize: 30, caliber: 5.56, manufacturer: "Heckler & Koch" },
     ] );
@@ -12,13 +13,16 @@ const weaponService = (function(){
         weapons.value = request.data;
     } )()
 
+    //GETALL
     const getAllWeapons = () => weapons;
 
+    //GETID
     const getWeaponById = async (id) => {
         const request = await axios.get(`https://localhost:7075/weapon/${id}`);
         return request.data;
     }
 
+    //PUT
     const putWeapon =  async (editedWeapon) => {
 
         await axios.put("https://localhost:7075/weapon", editedWeapon) 
@@ -35,14 +39,17 @@ const weaponService = (function(){
 
     }
 
+    //POST
     const addWeapon = async (newWeapon) => {
         await axios.post("https://localhost:7075/weapon/", newWeapon)
     }
 
+    //DELETE
     const deleteWeapon = async ( weaponToDeleteId ) => {
         await axios.delete(`https://localhost:7075/weapon/${weaponToDeleteId}`)
     }
 
+    //RETURN
     return {
         getAllWeapons,
         getWeaponById,
