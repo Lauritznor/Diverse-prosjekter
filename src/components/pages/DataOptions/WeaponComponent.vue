@@ -24,18 +24,18 @@
                         <h2>BILDEOPPLASTING</h2>
                         <hr>
                         <h3>Navn</h3>
-                        <input v-model="weaponName" type="text">
+                        <input v-model="weaponNameI" type="text">
 
                         <h3>Type</h3>
-                        <input v-model="weaponCategory" type="text">
+                        <input v-model="weaponCategoryI" type="text">
 
                         <h3>kaliber</h3>
-                        <input v-model="caliber" type="number">
+                        <input v-model="caliberI" type="number">
 
                         <h3> Kuler i magasin: </h3>
-                        <input v-model="magazineSize" type="number">
+                        <input v-model="magazineSizeI" type="number">
                         <h3>Produsent</h3>
-                        <input v-model="manufacturer" type="text">
+                        <input v-model="manufacturerI" type="text">
                         <div>
                             <input @changes="setImage" type="file">
                         </div>
