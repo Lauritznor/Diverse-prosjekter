@@ -80,6 +80,7 @@
 <script>import vehicleService from '../../../services/vehicleService.js'
 
 import { reactive, toRefs } from 'vue'
+import axios from 'vue'
 
 export default {
     setup(){
@@ -105,6 +106,37 @@ export default {
             vehicleForm.weight = vehicle.weight;
             vehicleForm.isArmoured = vehicle.isArmoured;
             
+        }
+
+        //IMAGE
+        const image = new FormData();
+
+        let setImage = ( e ) => {
+            image.append("file", e.target.files[0]);
+            // eslint-disable-next-line no-const-assign
+            vehicleForm = e.target.files[0].name;
+        } 
+
+        //SAVE
+        let saveVehicleInfo = () => {
+            let newVehicle = {
+                vehicleName: vehicleForm.vehicleName,
+                vehicleType: vehicleForm.vehicleType,
+                weight: vehicleForm.weight,
+                isArmoured: vehicleForm.isArmoured   
+            };
+            vehicleService.postVehicle ( newVehicle, image )
+        }
+
+        // FORM IMAGE
+        let postVehicle = async (newVehicle, image) => {
+        let request = await axios.post("https://localhost:7075/vehicle", newVehicle);
+        let imagePostRequest = await axios({
+            method: "POST",
+            url: `${ "https://localhost:7075/vehicle"}/saveIMage`,
+            data: image,
+            config: { header: { "Content-Type": "multipart/form-data"}}
+        }); console.log(request + " " + imagePostRequest);
         }
 
         //PUT - ENDRE ET KJØREØY
@@ -149,6 +181,9 @@ export default {
             getVehicle,
             deleteAVehicle,
             addNewVehicle,
+            postVehicle,
+            saveVehicleInfo,
+            setImage,
             changeVehicle,
             ...toRefs( vehicleForm )
         } 
