@@ -7,11 +7,8 @@
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#mission-img-upload" aria-expanded="false" aria-controls="collapseExample">
                         <p>Last opp bilde</p>
                     </button>
-                    <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#mission-edit" aria-expanded="false" aria-controls="collapseExample">
-                        <p>Endre</p>
-                    </button>
-                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#mission-add" aria-expanded="false" aria-controls="collapseExample">
-                        <p>Opprett</p>
+                    <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#edit1" aria-expanded="false" aria-controls="collapseExample">
+                        <p>Endre/opprett</p>
                     </button>
                     <button class="btn btn-danger " type="button" data-bs-toggle="collapse" data-bs-target="#mission-delete" aria-expanded="false" aria-controls="collapseExample">
                         <p>Slett</p>
@@ -37,7 +34,7 @@
                     </div> 
 
                     <!--PUT-->
-                      <div id="edit" class="mission-card">
+                      <div id="edit1" class="mission-card">
                         <h2>ENDRE/OPPRETT</h2> <hr>
                         <h3>Hent oppdrag med id</h3>
                         <p>Id opprettes av database dersom man ønsker å opprette nytt oppdrag</p>
