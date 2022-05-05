@@ -33,7 +33,7 @@
                         <div>
                             <input @changes="setImage" type="file">
                         </div>
-                        <input @click="saveMission" type="button" value="Lagre bildet">
+                        <input @click="saveMissionInfo" type="button" value="Lagre bildet">
                     </div> 
 
                     <!--PUT-->
@@ -83,7 +83,6 @@ export default {
 
 
         //IMAGE
-
         //FORM
         let formMission = reactive({
             missionDescriptionImg: "",
@@ -101,6 +100,7 @@ export default {
 
         //SAVE
         const saveMissionInfo = () => {
+            alert("Bilde lagret!")
             const newMission = {
                 missionDescription: formMission.missionDescriptionImg,
                 missionLocation: formMission.missionLocationImg,

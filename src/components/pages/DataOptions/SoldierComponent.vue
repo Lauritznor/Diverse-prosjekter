@@ -22,18 +22,22 @@
                     <div id="img-upload" class="content-card">
                         <h2>BILDEOPPLASTING</h2>
                         <hr>
-                        <h3>Beskrivelse</h3>
-                        <input v-model="beskrivelse" type="text">
+                        <h3>Fornavn</h3>
+                        <input v-model="fname" type="text">
 
-                        <h3>Lokasjon</h3>
-                        <input v-model="lokasjon" type="text">
+                        <h3>Etternavn</h3>
+                        <input v-model="lname" type="text">
 
-                        <h3>Oppdragsnummer</h3>
-                        <input v-model="oppdragsnummer" type="number">
+                        <h3>Alder</h3>
+                        <input v-model="ages" type="number">
+                        <h3>Soldat type</h3>
+                        <input v-model="sType" type="number">
+                        <h3>Soldat type</h3>
+                        <input v-model="tRank" type="number">
                         <div>
                             <input @changes="setImage" type="file">
                         </div>
-                        <input @click="saveMission" type="button" value="Lagre bildet">
+                        <input @click="saveSoldierInfo" type="button" value="Lagre bildet">
                     </div>
 
                     <!--PUT-->
@@ -78,9 +82,52 @@
 <script>
 import soldierService from '../../../services/soldierService.js'
 import { reactive, toRefs } from 'vue'
+import axios from 'vue'
 
 export default {
     setup(){
+
+        //IMAGE
+        //FORM
+        let formSoldier = reactive({
+            fName: "",
+            lName: "",
+            ages: "",
+            sType:"",
+            tRank: ""
+        });
+
+        //IMAGE
+        const image = new FormData();
+
+        const setImage = ( e ) => {
+            image.append("file", e.target.files[0]);
+            formSoldier = e.target.files[0].name;
+        } 
+
+        //SAVE
+        const saveSoldierInfo = () => {
+            alert("Bildet er lagret!")
+            const newSoldier = {
+                soldierDescription: formSoldier.fName,
+                soldierLocation: formSoldier.lName,
+                age: formSoldier.ages,
+                soldierType: formSoldier.sType,
+                rank: formSoldier.tRank
+            };
+            soldierService.postSoldier ( newSoldier, image )
+        }
+
+        //POST
+        const postSoldier = async (newSoldier, image) => {
+        const request = await axios.post("https://localhost:7075/mission", newSoldier);
+        const imagePostRequest = await axios({
+            method: "POST",
+            url: `${ "https://localhost:7075/mission"}/saveIMage`,
+            data: image,
+            config: { header: { "Content-Type": "multipart/form-data"}}
+        }); console.log(request + " " + imagePostRequest);
+        }
 
         // SOLDIERFORM - SKAFFER ALLE V-MODELS
         const soldierForm = reactive({  
@@ -147,7 +194,9 @@ export default {
 
         //RETURN
         return{
-
+            postSoldier,
+            setImage,
+            saveSoldierInfo,
             getSoldier,
             changeSoldier,
             deleteASoldier,
