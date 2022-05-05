@@ -39,7 +39,7 @@
                         <div>
                             <input @changes="setImage" type="file">
                         </div>
-                        <input @click="saveWeapon" type="button" value="Lagre bildet">
+                        <input @click="saveWeaponInfo" type="button" value="Lagre bildet">
                     </div>
 
                     <!--PUT-->
