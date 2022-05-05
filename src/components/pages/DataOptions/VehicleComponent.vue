@@ -168,7 +168,7 @@ export default {
             alert("Database endret! Lagt til: " + stringifiedVehicle)
         }
 
-        //DELETE - SLETT PERSON
+        //DELETE - SLETT KJØRETØY
         const deleteAVehicle = async () => {
 
             alert(`Du har nå slettet et kjøretøy fra databasen med id: ${vehicleForm.deleteId} og navn ${vehicleForm.veichleName + ", " + vehicleForm.veichleType}`)
