@@ -23,13 +23,13 @@
                         <h2>BILDEOPPLASTING</h2>
                         <hr>
                         <h3>Beskrivelse</h3>
-                        <input v-model="missionDescription" type="text">
+                        <input v-model="missionDescriptionImg" type="text">
 
                         <h3>Lokasjon</h3>
-                        <input v-model="missionLocation" type="text">
+                        <input v-model="missionLocationImg" type="text">
 
-                        <h3>Oppdragsnummer</h3>
-                        <input v-model="mission" type="number">
+                        <h3>Hemmelig</h3>
+                        <input v-model="missionSecret" type="number">
                         <div>
                             <input @changes="setImage" type="file">
                         </div>
@@ -76,21 +76,49 @@
 <script>
 import missionService from '../../../services/missionService.js'
 import {reactive, toRefs} from 'vue'
+import axios from 'vue'
 
 export default {
     setup(){
 
 
         //IMAGE
-        // const postMission = async (newMission, image) => {
-        // const request = await axios.post("https://localhost:7075/mission", newMission);
-        // const imagePostRequest = await axios({
-        //     method: "POST",
-        //     url: `${ "https://localhost:7075/mission"}/saveIMage`,
-        //     data: image,
-        //     config: { header: { "Content-Type": "multipart/form-data"}}
-        // }); console.log(request + " " + imagePostRequest);
-        // }
+
+        //FORM
+        let formMission = reactive({
+            missionDescriptionImg: "",
+            missionLocationImg: "",
+            missionSecret: "",
+        });
+
+        //IMAGE
+        const image = new FormData();
+
+        const setImage = ( e ) => {
+            image.append("file", e.target.files[0]);
+            formMission = e.target.files[0].name;
+        } 
+
+        //SAVE
+        const saveMissionInfo = () => {
+            const newMission = {
+                missionDescription: formMission.missionDescriptionImg,
+                missionLocation: formMission.missionLocationImg,
+                secret: formMission.missionSecret   
+            };
+            missionService.postMission ( newMission, image )
+        }
+
+        //POST
+        const postMission = async (newMission, image) => {
+        const request = await axios.post("https://localhost:7075/mission", newMission);
+        const imagePostRequest = await axios({
+            method: "POST",
+            url: `${ "https://localhost:7075/mission"}/saveIMage`,
+            data: image,
+            config: { header: { "Content-Type": "multipart/form-data"}}
+        }); console.log(request + " " + imagePostRequest);
+        }
 
 
         //GET V MODELS
@@ -164,7 +192,10 @@ export default {
             changeMission,
             getMission,
             deleteAMission,
-            addNewMission
+            addNewMission,
+            postMission,
+            setImage,
+            saveMissionInfo
         }
     }
 }
