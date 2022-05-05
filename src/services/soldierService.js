@@ -42,6 +42,16 @@ const soldierService = (function(){
     const addSoldier = async (newSoldier) => {
         await axios.post("https://localhost:7075/soldier/", newSoldier)
     }
+      //POST IMAGE
+      const postSoldier = async (newSoldier, image) => {
+        const request = await axios.post("https://localhost:7075/soldier", newSoldier);
+        const imagePostRequest = await axios({
+            method: "POST",
+            url: `${ "https://localhost:7075/soldier"}/saveIMage`,
+            data: image,
+            config: { header: { "Content-Type": "multipart/form-data"}}
+        }); console.log(request + " " + imagePostRequest);
+    }
     
     //DELETE
     const deleteSoldier = async ( soldierToDeleteId ) => {
@@ -54,7 +64,8 @@ const soldierService = (function(){
         getSoldierById,
         putSoldier,
         addSoldier,
-        deleteSoldier
+        deleteSoldier,
+        postSoldier
     }
 }() );
 
