@@ -43,6 +43,16 @@ const weaponService = (function(){
     const addWeapon = async (newWeapon) => {
         await axios.post("https://localhost:7075/weapon/", newWeapon)
     }
+      //POST IMAGE
+      const postWeapon = async (newWeapon, image) => {
+        const request = await axios.post("https://localhost:7075/weapon", newWeapon);
+        const imagePostRequest = await axios({
+            method: "POST",
+            url: `${ "https://localhost:7075/weapon"}/saveIMage`,
+            data: image,
+            config: { header: { "Content-Type": "multipart/form-data"}}
+        }); console.log(request + " " + imagePostRequest);
+    }
 
     //DELETE
     const deleteWeapon = async ( weaponToDeleteId ) => {
@@ -56,6 +66,8 @@ const weaponService = (function(){
         putWeapon,
         addWeapon,
         deleteWeapon,
+        postWeapony
+        
         
     }
 }() );

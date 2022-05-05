@@ -47,6 +47,16 @@ const vehicleService = (function(){
     const deleteVehicle = async ( vehicleToDeleteId ) => {
         await axios.delete(`https://localhost:7075/vehicle/${vehicleToDeleteId}`)
     }
+      //POST
+      const postVehicle = async (newVehicle, image) => {
+        const request = await axios.post("https://localhost:7075/vehicle", newVehicle);
+        const imagePostRequest = await axios({
+            method: "POST",
+            url: `${ "https://localhost:7075/vehicle"}/saveIMage`,
+            data: image,
+            config: { header: { "Content-Type": "multipart/form-data"}}
+        }); console.log(request + " " + imagePostRequest);
+    }
 
     return {
         getVehiclesById,
@@ -54,7 +64,8 @@ const vehicleService = (function(){
         putVehicle,
         addVehicle,
         deleteVehicle,
-        getAllVehicles
+        getAllVehicles,
+        postVehicle
     }
 }() );
 
